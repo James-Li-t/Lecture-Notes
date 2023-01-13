@@ -1,8 +1,8 @@
 \documentclass[a4paper]{article}
 \input{pre}
 
-\title{MTH210 Calculus \& Computational Methods II}
-\author{James Li | 501022159}
+\title{MTH310 Calculus \& Computational Methods II}
+\author{James Li | 501022159 \and Professor: L. Kolasa\and Email: lkolasa@torontomu.ca}
 \date{}
 
 \renewcommand{\contentsname}{\centering Content by Week}
@@ -11,7 +11,58 @@
   \maketitle
   \tableofcontents
   \newpage
-  \section{Placeholder} 
+  \section{Integration Practice and Theory/Application} 
+  \subsection{FToC I} 
+  Recall that we can solve a definite integral using the following definition:
+  $$
+    \displaystyle\int_{a }^{b} f(x)dx = F(b) - F(a)
+  $$ 
+  \subsection{Change of Variables / U-Substitution}
+  Suppose we need take the antiderivative of $\int 2x \cos(x^2)dx$, let us suppose that $g(x) = x^2$, then we know $g^\prime (x) = 2x$. We also know that $\int \cos (x) dx = \sin(x) + C$. If we combine these, we can derive the answer as:
+  $$
+  \sin (x^2) + C = \int 2x \cos(x^2)dx
+  $$
+  \begin{theorem}
+    Let us take $u = g^\prime (x) \rightarrow \frac{du }{dx } = g^\prime (x)$ and $du = g^\prime (x) dx$. We can then derive the following:
+      \begin{equation}
+        \label{Usub}
+        \begin{split}
+          f(g(x)) &= \int (f \cdot g)^\prime x \\
+                  &= \int f^\prime (g(x)) g^\prime(x) dx \\
+                  &= \int f^\prime (u) du
+        \end{split}
+      \end{equation}
+  \end{theorem}
+  \subsection{Examples:}
+  Consider the following substitution $u = 3x \rightarrow du = 3x \rightarrow \frac{1}{3} du = dx$, we can then solve:
+  \begin{equation}
+    \label{Example 1}
+    \begin{split}
+      \int \cos (3x) dx   
+                        &= \frac{1}{3} \int \cos (u) du \\
+                        &= \frac{1}{3} \sin (u) + C \\
+                        &= \frac{1}{3} \sin (3x) + C
+    \end{split}
+  \end{equation}
+  Consider the following substitution $u = 2x^2 +1 \rightarrow du = 4x\ dx $, we can then solve:
+  \begin{equation}
+    \label{Example 2}
+    \begin{split}
+      \int \frac{x }{2x^2+1} dx &= \frac{1}{4} \int \frac{du }{u}\\
+                                &= \frac{1}{4} ln(u) + C\\
+                                &= \frac{1}{4} ln (2x^2+1) + C
+    \end{split}
+  \end{equation}
+  Consider the following substitution $ u = 1+x \rightarrow du = dx \rightarrow u - 1 = x$
+  \begin{equation}
+    \label{Example 3}
+    \begin{split}
+      \int x \sqrt{1+x}\ dx &= \int (u-1) u ^{\frac{1 }{2}} \\
+                            &= \int u^{\frac{3 }{2}} - u^{\frac{1 }{2 }}du \\
+                            &= \frac{2 }{5} u^{\frac{5 }{2 }} - \frac{2 }{3} u^{\frac{3 }{2}} + C\\
+                            &= \frac{2 }{5} (1+x)^{\frac{5 }{2 }} - \frac{2 }{3} (1+x)^{\frac{3 }{2}} + C\\
+    \end{split}
+  \end{equation}
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 

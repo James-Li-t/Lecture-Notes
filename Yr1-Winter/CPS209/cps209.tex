@@ -2,23 +2,52 @@
 \input{pre}
 
 \title{CPS209 Computer Science II}
-\author{James Li | 501022159}
+\author{James Li | 501022159 \and Professor: R. Valenzano\and Email: rick.valenzano@torontomu.ca}
 \date{}
-
 \renewcommand{\contentsname}{\centering Content by Week}
+
+\lstset{language = java}
 
 \begin{document}
   \maketitle
   \tableofcontents
   \newpage
-  \section{Placeholder} 
-  \section{Placeholder} 
-  \section{Placeholder} 
-  \section{Placeholder} 
-  \section{Placeholder} 
-  \section{Placeholder} 
-  \section{Placeholder} 
-  \section{Placeholder} 
-  \section{Placeholder} 
-  \section{Placeholder} 
+  \section{Introduction To Java} 
+  \textit{Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let programmers write once, run anywhere}
+  \subsection{JVM (Java Virtual Machine)}
+  The JVM is the virtual environment in which all Java code can be executed, to run a Java file using the JVM it must first be compiled. The compiler (javac) generates byte code in a $.class$ file which can run on any JVM, allowing cross platform accessibility. The JVM efficiently interprets byte code in the $.class$ file into native binary and executes it, leading to faster processing times than languages like python.
+  \subsection{"Hello World!" in Java}
+  Begin by creating a file called $HelloWorld.java$ and write the following code:
+  \begin{lstlisting}
+  public class HelloWorld{
+    public static void main(String[] args){
+      System.out.println("Hello World!");
+    }
+  }
+  \end{lstlisting}
+  Notice the increased verbosity compared to Python, this is a defining trait of Java.
+  The code is then compiled using the command:
+  \begin{lstlisting}
+    >javac HelloWorld.java
+  \end{lstlisting}
+  This will create a HelloWorld.class file, which we can finally run by invoking the command:
+  \begin{lstlisting}
+    >java HelloWorld
+    Hello World!
+  \end{lstlisting}
+  \subsection{Syntactic differences with Python}
+  \begin{itemize}
+    \item Instead of blocks seperated using indents, Java relies on $\{code\}$ to seperate blocks and levels of code.
+    \item You must add a $;$ to the end of a line of code, otherwise Java will continue reading all the code afterwards as one line.
+  \end{itemize}
+  
+  \section{Weekly Content} 
+  \section{Weekly Content} 
+  \section{Weekly Content} 
+  \section{Weekly Content} 
+  \section{Weekly Content} 
+  \section{Weekly Content} 
+  \section{Weekly Content} 
+  \section{Weekly Content} 
+  \section{Weekly Content} 
 \end{document}
