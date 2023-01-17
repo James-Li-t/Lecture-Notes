@@ -63,6 +63,74 @@
                             &= \frac{2 }{5} (1+x)^{\frac{5 }{2 }} - \frac{2 }{3} (1+x)^{\frac{3 }{2}} + C\\
     \end{split}
   \end{equation}
+  \subsection{Area between two curves}
+  \textbf{Recall:}
+
+  Suppose $f(x) \geq 0$ is the area beneath the curve $0\le y \le f(x)$, where $a\le x \le b$, then:
+  $$
+    \displaystyle\int_{a}^{b} f(x) dx  
+  $$
+  is the area of the curve between $a,b$.
+
+  \begin{theorem}
+    Given functions $f(x), g(x)$ the area between the curves from $(a,b)$ can be represented as:
+    \begin{displaymath}
+     \displaystyle\int_{a }^{b}  (f(x)-g(x))dx
+    \end{displaymath}
+  \end{theorem}
+  \subsection{Examples:}
+  Given two functions $f(x) = 3x^2 + 12$ and $g(x) = 4x+4$, find the area between the curves from $(-3,3)$.
+  \begin{equation}
+    \label{Example1}
+    \begin{split}
+      \displaystyle\int_{-3 }^{3 } (f(x)-g(x))dx &= \displaystyle\int_{-3 }^{3} (3x^2+12) - (4x+4) dx\\
+                                               &= \displaystyle\int_{-3 }^{3} 3x^2 - 4x + 8 dx \\
+                                               &= x^3-2x^2+8x \|^{3}_{-3} \\
+                                               &\vdots\\
+                                               &= 102
+    \end{split}
+  \end{equation}
+  Given two functions $(x^2+2)$ and $(2x+5)$, find the \textbf{enclosed} area between these two curves.
+
+ \textit{Find $a,b$, where the lines intesect $\rightarrow 2x+5 = x^2 + 2 \dots (-1 \le x \le 3)$ then solve the integral.} 
+
+  \begin{equation}
+    \label{eq:3}
+    \begin{split}
+      \displaystyle\int_{-1}^{3} (f(x)-g(x)) dx &= \displaystyle\int_{-1 }^{3 } (x^2 + 2)-(2x+5)\\
+                                                &\vdots \\
+                                                &= \frac{32 }{3}
+    \end{split}
+  \end{equation}
+  Given two functions $\sin(x)$ and $\cos(x)$ find the area between these two curves given that $0\le x \le \frac{\pi }{2}$.
+  
+  \textit{Find the intersection between the functions on the range given, then build the integral. This is easily done by observing the functions \textbf{geometrically.}}
+  \begin{equation}
+    \begin{split}
+      \displaystyle\int_{0 }^{\frac{\pi }{4}} (f(x)-g(x)) dx &= \displaystyle\int_{0 }^{\frac{\pi }{4}}\cos(x)-\sin(x)dx+\displaystyle\int_{\frac{\pi }{4}}^{\frac{\pi }{2}}\sin(x)-\cos(x)  dx \\ 
+                                                             &\vdots\\
+                                                             &= 2(\sqrt{2}-1)
+    \end{split}
+  \end{equation}
+  \newpage
+
+  Given three functions ($\frac{8 }{x^2}$), ($8x$) and ($x$), find the area bounded by these functions.
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=0.5\textwidth]{~/img/2023-01-17-13-56-23.png}
+    \end{center}
+    \caption{}
+    \label{fig:intersect}
+  \end{figure}
+  
+  \textit{Find the intersections by observing geometrically(\ref{fig:intersect}).We can see that the area is simply the regions $I + II$}.
+  
+  \begin{equation}
+    \label{eq:6}
+    \begin{split}
+      \textrm{Area} &=\dots= 6 \textrm{(Do it later)}\\
+    \end{split}
+  \end{equation}
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 
