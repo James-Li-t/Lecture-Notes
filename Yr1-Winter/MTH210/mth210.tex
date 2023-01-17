@@ -2,7 +2,7 @@
 \input{pre}
 
 \title{MTH210 | Discrete Mathematics II}
-\author{James Li | 501022159}
+\author{James Li | 501022159 \and Professor: M. Delcourt\and Email: mdelcourt@torontomu.ca}
 \date{}
 
 \renewcommand{\contentsname}{\centering Content by Week}
@@ -11,9 +11,56 @@
   \maketitle
   \tableofcontents
   \newpage
-  \section{Placeholder} 
-  \section{Placeholder} 
-  \section{Placeholder} 
+  \section{Sequences and Series} 
+    A \textbf{sequence} is an ordered set of numbers.
+    \begin{displaymath}
+      \begin{split}
+        &2,4,6,8,10\dots \textrm{ is an example of a sequence of positive numbers.} \\
+        &a_1,a_2,a_3,\dots,a_n \textrm{ denotes an infinite sequence.}
+      \end{split}
+    \end{displaymath}
+    \begin{itemize}
+      \item A sequence is defined \textbf{analytically} if each term $a_i$ is defined by some function $f(i) = a_i$
+      \item A sequence is defined \textbf{recursively} if the first $k$ terms are given \textbf{explicitly} and the rest are given through a recursive function $a_n = f(a_{n-1},a_{n-2},\dots,a_{n-k})$ for $n >k$.
+      \item Even if two sequences are equal for small indexes, does not indicate that they don't diverge at some further point.
+    \end{itemize}
+    A \textbf{series} is the sum of all the terms in a sequence.
+    \begin{displaymath}
+      \textrm{If $m$ and $n$ are integers and $m \le n$, the symbol $\sum_{k=m}^n a_k$ is the summation from $k$, defined as:}
+    \end{displaymath}
+     $$ 
+        \sum_{k=m}^n a_k = a_m+ a_{m+1}+ a_{m+2} + \dots + a_{n}
+     $$
+    \begin{itemize}
+      \item We call $k$ the \textbf{index} of the summation.
+      \item $m$ is the \textbf{lower limit} of the summation.
+      \item $n$ is the \textbf{upper limit} of the summation.
+    \end{itemize}
+
+    \subsection{Sums and Products}
+    If $m$ and $n$ are integers and $m \le n$, the symbol $\prod_{k=m}^n a_k$ is read as product from $k$ equals $m$ to $n$ of $a$ sub $k$, it can be written as:
+    $$
+    \prod_{k=m}^n a_k = a_m \cdot a_{m+1} \cdot a_{m+2} \times \dots \times a_n
+    $$
+    \begin{theorem}
+      The following properties hold for any integer $n \geq m$, given $a_m, \dots$ and $b_m,\dots$ sequences of real numbers.
+      \begin{itemize}
+        \item $\sum_{k=m }^{n} a_k + \sum_{k=m }^{n} b_k = \sum_{k=m }^{n} (a_k + b_k)$
+        \item $c\cdot \sum_{k=m }^{n} a_k = \sum_{k=m }^{n} (c\cdot a_k)$, given some constant $c$
+        \item $(\prod_{k=m}^{n}a_k) \cdot (\prod_{k=m}^{n}b_k) = \prod_{k=m}^{n} (a_k \cdot b_k)$
+      \end{itemize}
+    \end{theorem}
+    \begin{theorem}
+      The binomial theorem, also called $n$ choose $r$ is computed by using the following formula for $0 \le r \le n$:
+      \begin{displaymath}
+       \begin{pmatrix}
+        n \\ r
+       \end{pmatrix} 
+       = \displaystyle\frac{n! }{r!(n-r)!}
+      \end{displaymath}
+    \end{theorem}
+    
+    
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 
