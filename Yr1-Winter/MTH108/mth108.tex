@@ -62,7 +62,9 @@
     Given two vectors in $\R^n ,\vec{a} = (\begin{smallmatrix}x_1 \\ \vdots \\ x_n\end{smallmatrix}), \vec{b} = (\begin{smallmatrix}y_1\\ \vdots \\ y_n\end{smallmatrix})$, the product of $\vec{a} \cdot \vec{b}$ is:
     \begin{displaymath}
       \begin{split}
-        \vec{a} \cdot \vec{b} &= (x1,\dots, x_n) \cdot \begin{pmatrix}
+        \vec{a} \cdot \vec{b} &= \begin{pmatrix}
+          x_1 & \dots & x_n 
+        \end{pmatrix} \cdot \begin{pmatrix}
           y_1 \\ \vdots \\ y_n
       \end{pmatrix}\\
                               &= x_1y_1 + x_2y_2 + \dots + x_ny_n
@@ -79,8 +81,85 @@
                             &= 2
     \end{split}
   \end{equation}
-  
-  
+  \subsection{Other Properties of Vector Products}
+  Given some $\vec{a},\vec{b}$ in $\R^n$ and some constant $k$, the following properties apply:
+  \begin{itemize}
+    \item $(\vec{a}+\vec{b})(\vec{a}+\vec{b}) = \vec{a}^2+2\vec{a}\vec{b}+\vec{b}^2$
+    \item $\vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{a}$
+    \item $\vec{a} \cdot (\vec{b}+\vec{c}) = \vec{a}\vec{b} + \vec{a}\vec{c}$
+    \item $\vec{a}(k\vec{b}) = k\vec{a}\vec{b}$
+    \item $\vec{a} \cdot \vec{a} = \vec{a}^2 = x_1^2 + x_2^2 + \dots + x_n^2$
+  \end{itemize}
+  The midpoint $C(z_1,z_2,\dots,z_n)$ of a line from $A(x_1,x_2,\dots,x_n)$ to $B(y_1,y_2,\dots,y_n)$ is calculated using the following forumla:
+  \[
+    \begin{pmatrix}
+    z_1 \\ z_2 \\ \vdots \\ z_n
+    \end{pmatrix}
+    = (1-t)
+    \begin{pmatrix}
+     x_1 \\ x_2 \\ \vdots \\ x_n 
+    \end{pmatrix}
+    + t
+    \begin{pmatrix}
+     y_1 \\ y_2 \\ \vdots \\ y_n 
+    \end{pmatrix}
+    \quad
+    \textrm{for t such that }
+    0 \le t \le 1
+  \]
+  We can simplify this to calculate every $z_i$:
+  \[
+    z_i = \displaystyle\frac{x_i+y_i}{2}
+  \]
+  \subsubsection{Examples:}
+  Given $A(1,-2)$ and $B(-3,4)$, find the midpoint $C(x,y)$:
+  \begin{equation}
+    \begin{split}
+      x &= \displaystyle\frac{1+(-3 )}{2} \\
+        &= -1\\
+      y &= \displaystyle\frac{(-2)+4 }{2} \\
+        &= 1
+    \end{split}
+  \end{equation}
+  Therefore $C = (-1,1)$.
+  \subsection{Norm and Angle}
+  The magnitude of a vector in $\R^n$ is called the \textbf{Norm}, it is notated and defined as:
+  \[
+    ||\vec{a}|| = \sqrt{x_1^2 + x_2^2 + \dots + x_n^2} \quad (\vec{a}\textrm{ is some vector in }\R^n)
+  \]
+  We can use this definition to demonstrate some inequalities and properties (\textit{Given some $\vec{a},\vec{b} \in \R^n$ and some constant $k$}):
+  \begin{itemize}
+    \item $|| \vec{a} + \vec{b} ||  \le ||\vec{a}|| + ||\vec{b}||$ \textit{(Triangle Inequality)}
+    \item $|| \vec{a} + \vec{b} || \geq ||\vec{a}|| - ||\vec{b}||$
+    \item $|| k \vec{a} || = |k| \cdot || \vec{a}||$
+    \item $|| \displaystyle\frac{\vec{a}}{||\vec{a}||}|| = 1$
+    \item $\vec{a} \cdot \vec{b} = 0 \Leftrightarrow \vec{a} \bot \vec{b}$ \textit{(Orthagonal)}
+    \item $\cos \theta = \displaystyle\frac{\vec{a}\cdot\vec{b}}{||\vec{a}||  ||\vec{b}||}$
+  \end{itemize}
+  \subsection{Determinants}
+  The determinant of a matrix is a number that can be calculated using the following formula (\textit{for a 2x2 matrix}):
+  \[
+    \begin{vmatrix}
+      a & b \\ c & d
+    \end{vmatrix}
+    = ad - bc
+  \]
+  Given $\vec{a},\vec{b} \in \R^n$, the \textbf{Grand Determinant} of $\vec{a}\vec{b}$ is defined as:
+  \[
+    G(\vec{a},\vec{b})
+    = \begin{vmatrix}
+      \vec{a} \cdot \vec{a} & \vec{a} \cdot \vec{b} \\
+      \vec{b} \cdot \vec{a} & \vec{b} \cdot \vec{b}
+    \end{vmatrix}
+    = ||\vec{a}||^2 \ ||\vec{b}||^2 - (\vec{a}\vec{b})^2
+  \]
+  \begin{lemma}
+    The \textbf{Cauchy Inequality} states:
+    \[
+      G (\vec{a},\vec{b}) \geq 0 \Rightarrow |\vec{a} \cdot \vec{b}| \le || \vec{a}|| \cdot || \vec{b} ||
+    \]
+  \end{lemma}
+
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 
