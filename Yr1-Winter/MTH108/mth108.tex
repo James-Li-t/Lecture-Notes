@@ -4,14 +4,83 @@
 \title{MTH108 | Linear Algebra}
 \author{James Li | 501022159 \and Professor: K. Q. Lan\and Email: klan@torontomu.ca}
 \date{}
-
 \renewcommand{\contentsname}{\centering Content by Week}
-
 \begin{document}
   \maketitle
   \tableofcontents
   \newpage
-  \section{Placeholder} 
+  \section{Euclidean Spaces} 
+  A Euclidean Space is a mathematical space in which points and lines can be represented by a set of coordinates in the respective dimension of the space, and every point can be represented in a defined set. For example:
+  $$
+  \R^3 = {(x,y,z); x,y,z \in \R}
+  $$
+  is three-dimensional space represented using coordinates in terms of $(x,y,z)$, where $x,y,z \in \R$.
+  \begin{theorem}
+    Given two vectors $\vec{a},\vec{b}$ and some constant $k$, $\vec{a}$ and $\vec{b}$ are called \textbf{parallel} if:
+    \begin{displaymath}
+      \vec{a} = k\vec{b} \Leftrightarrow \vec{a} // \vec{b}
+    \end{displaymath}
+    
+  \end{theorem}
+  
+  \subsection{Products of Vectors with Constants}
+  \begin{theorem}
+    Given a constant $k$ in $\R$ and some vector $\vec{a}$ in $\R^2$ , the product of $k \vec{a}$ is:
+    \begin{displaymath}
+      k \vec{a} = k(x_1,y_1) = (k\cdot x_1, k\cdot y_1), x,y \in \R
+    \end{displaymath}
+  \end{theorem}
+  To represent a vector in Linear Algebra, we can use the following notation (\textit{using the previously mentioned vector $\vec{a}$ as an example}):
+  $$
+  \vec{a} = (x_1,y_1) = 
+  \begin{pmatrix}
+   x_1 \\ y_1 
+  \end{pmatrix}
+  $$
+  \subsubsection{Examples:}
+  Take $\vec{a} = (\begin{smallmatrix} 2 \\ -1\end{smallmatrix})$ and $\vec{b} = (\begin{smallmatrix} 4 \\ -1\end{smallmatrix})$, compute $-2\vec{a} + 3\vec{b}$:
+  \begin{equation}
+    \label{eq:1}
+    \begin{split}
+      -2\vec{a} + 3\vec{b} &= 2\begin{pmatrix}
+       2 \\ 1 
+      \end{pmatrix} + 3 \begin{pmatrix}
+       4 \\ -1 
+      \end{pmatrix}\\
+                           &= \begin{pmatrix}
+                           -4 \\ 2 
+                           \end{pmatrix} + \begin{pmatrix}
+                           12 \\ -3 
+                           \end{pmatrix} \\
+                           &= \begin{pmatrix}
+                           8 \\ -1 
+                           \end{pmatrix}
+    \end{split}
+  \end{equation}
+  \subsection{Products of two Vectors}
+  \begin{theorem}
+    Given two vectors in $\R^n ,\vec{a} = (\begin{smallmatrix}x_1 \\ \vdots \\ x_n\end{smallmatrix}), \vec{b} = (\begin{smallmatrix}y_1\\ \vdots \\ y_n\end{smallmatrix})$, the product of $\vec{a} \cdot \vec{b}$ is:
+    \begin{displaymath}
+      \begin{split}
+        \vec{a} \cdot \vec{b} &= (x1,\dots, x_n) \cdot \begin{pmatrix}
+          y_1 \\ \vdots \\ y_n
+      \end{pmatrix}\\
+                              &= x_1y_1 + x_2y_2 + \dots + x_ny_n
+      \end{split}
+    \end{displaymath}
+   This is known as the \textbf{Dot Product}.
+  \end{theorem}
+  \subsubsection{Examples:}
+  Take $\vec{A} = (\begin{smallmatrix} 1 \\ -1 \\ 2 \\ 3\end{smallmatrix})$ and $\vec{b} = (\begin{smallmatrix}2 \\ 1 \\ -1 \\ 1\end{smallmatrix})$, Find the dot product of $\vec{a} \cdot \vec{b}$:
+  \begin{equation}
+    \label{eq:2}
+    \begin{split}
+      \vec{a} \cdot \vec{b} &= (2) + (-1) + (-2) + (3) \\
+                            &= 2
+    \end{split}
+  \end{equation}
+  
+  
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 
