@@ -137,14 +137,14 @@
     \item $\cos \theta = \displaystyle\frac{\vec{a}\cdot\vec{b}}{||\vec{a}||  ||\vec{b}||}$
   \end{itemize}
   \subsection{Determinants}
-  The determinant of a matrix is a number that can be calculated using the following formula (\textit{for a 2x2 matrix}):
+  The determinant of a matrix is a number that can be calculated using the following formula (\textit{in $\R^2$}):
   \[
     \begin{vmatrix}
       a & b \\ c & d
     \end{vmatrix}
     = ad - bc
   \]
-  Given $\vec{a},\vec{b} \in \R^n$, the \textbf{Grand Determinant} of $\vec{a}\vec{b}$ is defined as:
+  Given $\vec{a},\vec{b} \in \R^n$, the \textbf{Gram Determinant} of $\vec{a}\vec{b}$ is defined as:
   \[
     G(\vec{a},\vec{b})
     = \begin{vmatrix}
@@ -153,6 +153,18 @@
     \end{vmatrix}
     = ||\vec{a}||^2 \ ||\vec{b}||^2 - (\vec{a}\vec{b})^2
   \]
+  Given some vectors $\vec{a},\vec{b} \in \R^3$, the Gram Determinant can be calculated using the following formula:
+  \[
+    G(\vec{a},\vec{b}) = \begin{vmatrix}
+      x_1 & x_2 \\ y_1 & y_2 
+    \end{vmatrix}^2 +
+    \begin{vmatrix}
+      x_1 & x_3 \\ y_1 & y_3
+    \end{vmatrix}^2 +
+    \begin{vmatrix}
+      x_2 & x_3 \\ y_2 & y_3
+    \end{vmatrix}^2
+  \]
   \begin{lemma}
     The \textbf{Cauchy Inequality} states:
     \[
@@ -160,7 +172,34 @@
     \]
   \end{lemma}
 
-  \section{Placeholder} 
+  \section{Projections and Spanning Spaces} 
+  For some $\vec{a},\vec{b} \in \R^n$, a projection of $\vec{a}$ on $\vec{b}$ is defined as:
+  \[
+    \vectorproj[\vec{a}]{\vec{b}} = \frac{\vec{a}\cdot\vec{b}}{||\vec{a}||^2} \cdot \vec{a}
+  \]
+  The norm of a projection is defined as:
+  \[
+    ||\vectorproj[\vec{a}]{\vec{b}}|| = \frac{\vec{a}\cdot\vec{b}}{||\vec{a}||^2}\cdot ||\vec{a}||
+  \]
+  \subsection{Projection and Area of a parallelogram}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=0.5\textwidth]{img/2023-01-23-20-16-23.png}
+    \end{center}
+  \end{figure}
+  
+  Given the above figure, we can determine formulas for calculating properties of the parallelogram:
+
+  \begin{enumerate}
+    \item $h = ||\vec{BC}|| = ||\vec{b} - \vectorproj[\vec{a}]{\vec{b}}||$
+    \item $Area = ||\vec{a}|| \cdot ||\vec{b} - \vectorproj[\vec{a}]{\vec{b}}||$
+    \item $\sin(\theta) = \frac{||\vec{b}-\vectorproj[\vec{a}]{\vec{b}}||}{||\vec{b}||}$
+    \item $\cos(\theta) = \frac{||\vectorproj[\vec{a}]{\vec{b}}||}{||\vec{b}||} = \frac{\vec{a}\cdot\vec{b}}{||\vec{a}||||\vec{b}||}$
+  \end{enumerate}
+  The generalized formula for calculating the area of some $\vec{a},\vec{b} \in \R^n$ is as follows:
+  \[
+    A(\vec{a},\vec{b}) = \sqrt{G(\vec{a},\vec{b})}
+  \]
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 
