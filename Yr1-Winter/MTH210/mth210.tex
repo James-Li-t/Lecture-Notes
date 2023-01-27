@@ -61,7 +61,112 @@
     \end{theorem}
     
     
-  \section{Placeholder} 
+  \section{Mathmatical Induction} 
+  Mathematical Induction is a two-step process, Take a statement in the form "For every integer $n \geq a $, a property P(n) holds true". We then apply the following:
+  \begin{enumerate}
+    \item The first step is called the \textbf{Basis Step}, this is where you show that the condition $P$ of your starting point $a$, is true $\rightarrow$ Show that $P(a)$ is true.
+    \item The second step is called the \textbf{Inductive Step}, you show that for every integer $k \geq a$, if $P(k)$ is true, then $P(k+1)$ must also be true.
+      \begin{enumerate}
+        \item To perform this step, we must suppose that $P(k)$ holds, where $k \geq a$ (\textbf{Inductive Hypothesis}), therefore $P(k+1)$ must be true.
+      \end{enumerate}
+  \end{enumerate}
+  To write an inductive proof formally, we must clearly state all steps and assumptions, take the following example:
+
+  \textbf{Prove.} For every integer $n \geq 1, 1+2+\dots+n= \frac{n(n+1 )}{2}$ by \textbf{Induction}:
+
+  \begin{proof}
+    \underline{Basis Step} (\textit{Base Case}):
+    \begin{displaymath}
+      \textrm{Let } n = 1, P(1) \textrm{ holds because } \frac{1(1+1 )}{2} = \frac{1(2)}{2} = 1
+    \end{displaymath}
+    \underline{Inductive Step}:
+    \begin{displaymath}
+      \textrm{Let } n = k \textrm{ with } k \geq 1. \textrm{ Suppose that } P(k) \textrm{ is true (\textit{inductive hypothesis}). Thus we can show:}
+    \end{displaymath}
+    \begin{equation*}
+      \begin{split}
+        1+2+\dots+k+(k+1)&=(1+2+\dots+k)+(k+1)\\
+                         &=\frac{k(k+1)}{2} +(k+1) \\
+                         &=\frac{k(k+1 )}{2} +\frac{2(k+1 )}{2}\\
+                         &=\frac{k^2 + k }{2} + \frac{2k+2 }{2} \\
+                         &=\frac{k^2 + 3k +2 }{2}\\
+                         &= \frac{(k+1)(k+2)}{2}
+      \end{split}
+    \end{equation*}
+    Thus $1+2+\dots+(k+1) = \frac{(k+1)((k+1)+1)}{2}$ (notice how this is in the form $1+2+\dots+n=\frac{n(n+1 )}{2}$). Therefore we can conclude that $P(k+1)$ is true.
+  \end{proof}
+  \subsection{Recursion}
+  Given a recursively defined sequence $a_i$, find an analytical formula using the following steps:
+  \begin{enumerate}
+    \item Find an explicit formula for $a_i$ by making educated guesses.
+    \item Prove that the formula holds through induction.
+  \end{enumerate}
+  Take the following example:
+
+  \textbf{Prove.} Given $b_0 = 1, b_n = \frac{b_n -1 }{1 - b_n -1}$ for $n>1$
+  \begin{proof}
+    Make an assumption for the formula of $b_n$, take the following guess:
+    \begin{displaymath}
+      b_n = \frac{1 }{n+1} \textrm{ for } n \geq 0 \textrm{ (\textit{Conjecture})}
+    \end{displaymath}
+    \underline{Basis Case}:
+    \begin{displaymath}
+      \textrm{Let } n = 0. P(0) \textrm{ is known to be true as } b_0 = 1 = \frac{1 }{0+1}
+    \end{displaymath}
+    \underline{Inductive Step:}
+    \[
+      \textrm{Let } n = k \textrm{ with } k \geq 0. \textrm{ Assume that $P(k)$ is true (\textit{inductive hypothesis}). Thus we can show:}
+    \]
+    \begin{displaymath}
+      \begin{split}
+        b_{k+1} &= \frac{b_k }{1+ b_k} \\
+                &= \frac{\frac{1 }{k+1}}{1 + \frac{1 }{k+1}}\\
+                &= \frac{\frac{1 }{k+1 }}{\frac{k+2 }{k+1}} \\
+                &= \frac{1 }{k+2} \\
+                &= \frac{1 }{(k+1)+1}
+      \end{split}
+    \end{displaymath}
+    Hence $P(k+1)$ must be true.
+  \end{proof}
+  
+  \subsection{Strong Induction}
+  Strong induction follows the same steps as normal/weak induction, with the difference that the basis step may contain proofs for several values and $P(n)$ is assumed not just for a single $n$ but for all values $n$ through $k$, only then is the truth of $P(k+1)$ proved. The steps for strong induction are as follows:
+
+  \textit{Let $P(n)$ be a property that is defined for integers $n$, let $a,b$ be fixed integers such that $a \le b$. Suppose the following statements:}
+  \begin{enumerate}
+    \item $P(a), P(a+1),\dots,P(b)$ are all true. (\textbf{Basis Step})
+    \item For every integer $k \geq b$, if $P(i)$ is true for each integer $i$ from $a$ through $k$, then $P(k+1)$ is true. (\textbf{Inductive Step})
+  \end{enumerate}
+  \textit{then the statement "For every integer $n \geq a, P(n)$"} is true. The supposition that $P(i)$ is true is the inductive hypothesis in this case.
+  
+  \textbf{Prove.} Given a sequence $a_i$, 
+  \[
+    a_0 = 12, a_1 = 29 \quad a_n = 5a_{n-1} - 6a_{n-2}
+  \]
+  Show that for all $n \geq 0$,
+  \[
+    a_n = 5 \cdot 3^n + 7 \cdot 2^n
+  \]
+  \begin{proof}
+    Proceed by induction on $n$.
+
+    \underline{Basis Step:} We take that $P(0)$ and $P(1)$ are true.
+    
+    \underline{Inductive Step:} Let $n=k+1$. Assume $P(i)$ is true for $k \geq i \geq 0$ (\textit{inductive Hypothesis}). Thus:
+    \begin{displaymath}
+      \begin{split}
+        a_k &= 5 \cdot 3^k + 7 \cdot 2^k \\
+        a_{k-1} &= 5 \cdot 3^{k-1} + 7 \cdot 2^{k-1} \\
+        a_{k+1} &= 5(5\cdot 3^k + 7\cdot 2^k) - 6(5\cdot 3^{k-1} + 7\cdot 2^{k-1})\\
+                &= 25 \cdot 3^k + 35 \cdot 2^k - 30 \cdot 3^{k-1} - 42 \cdot 2^{k-1} \\ 
+                &= 25 \cdot 3^k + 35 \cdot 2^k - 10 \cdot 3^k - 21 \cdot 2^k \\ 
+                &= 15 \cdot 3^k + 14 \cdot 2^k \\
+                &= 5 \cdot 3^{k+1} + 7 \cdot 2^{k+1}
+      \end{split}
+    \end{displaymath}
+    Hence $P(k+1)$ is true.
+  \end{proof}
+  
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 

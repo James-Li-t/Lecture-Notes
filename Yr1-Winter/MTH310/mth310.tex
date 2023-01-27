@@ -138,8 +138,64 @@
   \[
     V = \int_{a }^{b} \pi (\underset{outer}{f(x)} - \underset{inner}{g(x)})^2 dx
   \]
+  \subsection{The Average Value of a Function}
+  Recall that the average value of a set of numbers $(x_1,x_2,\dots,x_n)$ can be written as:
+  \[
+    Average =\frac{x_1 + x_2 + \dots + x_n}{n}
+  \]
+  We can then extrapolate to a more generalized formula:
+  \[
+    Average = \frac{1 }{n} \sum_{i=1}^{n} (x_i)
+  \]
+  Rewrite in terms of arbitrary even sections between $(a,b)$ on some curve $f(x)$, rather than some set of numbers:
+  \[
+    \begin{split}
+      Average &= \frac{1 }{b-a} \sum_{x=a }^{b} f(x) \quad \textrm{(This can be rewritten as an integral from } (a,b))\\ 
+              &= \frac{1 }{b-a} \int_{a }^{b} f(x) dx , \quad a \le x \le b \quad \textrm{(Definition of Average Value of $f(x)$)}
+    \end{split}
+  \]
   
-  \section{Placeholder} 
+  \section{Integration Techniques} 
+  Techniques of integration can be thought of as methods for evaluating integrals in situations where the process or methodology required are not obvious, many integrals can only be solved by specific techniques and these techniques can generally be categorized into two types:
+  \begin{itemize}
+    \item Universal Techniques
+    \item Particular Techniques
+  \end{itemize}
+  \subsection{Universal Techniques}
+  \subsubsection{Integration by Parts}
+  Recall that $(f(x)g(x))^\prime = f(x)g^\prime(x) + f^\prime(x)g(x)$ (\textit{Product Rule}), if we then integrate both sides of this equation:
+  \[
+    f(x)g(x) = \int f(x)g^\prime(x) dx + \int g(x)f^\prime(x) dx
+  \]
+  We can then rearrange this equation into the following:
+  \[
+    \int f(x)g^\prime(x) dx = f(x)g(x) - \int g(x)f^\prime(x) dx
+  \]
+  Then we can generalize into:
+  \[
+    \int u dv = uv - \int v du
+  \]
+  This is known as integration by parts, the idea is that you rewrite the integrand in terms of $u$ $dv$, generally you will want to follow these guidelines for choosing these values:
+  \begin{enumerate}
+    \item Choose $u$ to be such that $du$ is a \textbf{simpler} value then $u$.
+    \item Choose $dv$ such that you could easily integrate and result in $v$.
+  \end{enumerate}
+  You will know that a integral likely requires integration by parts if the integrand is obviously a product of two functions, take the following example:
+
+  \textit{Evaluate.} $\int x \cos x dx = $
+  \begin{equation*}
+    \begin{aligned}
+      \int u dv &= uv - \int vdu \\
+      \int x \cos x dx &= x \sin x - \int \sin x dx \\
+                       &= x \sin x + \cos x + C
+    \end{aligned}
+    \qquad 
+    \begin{aligned} 
+      u = x &,\quad dv = \cos x dx \\
+      du = dx &,\quad v = \int \cos x dx = \sin x
+    \end{aligned}
+  \end{equation*}
+  \subsection{Particular Techniques}
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 
