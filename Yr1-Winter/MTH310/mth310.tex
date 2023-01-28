@@ -196,6 +196,51 @@
     \end{aligned}
   \end{equation*}
   \subsection{Particular Techniques}
+  \subsubsection{Trigonometric Integrals}
+  To evaluate an integral in the form $\int \sin^n x$ or $\int \cos^n x$, where $n$ is some integer, recall the following two trigonometric identities:
+  \[
+    \begin{split}
+      \sin^2 x + \cos^2 x &= 1 \\
+      \cos^2 x - \sin^2 x &= \cos 2x \\
+    \end{split}
+  \]
+  Rearranging these identities we can solve for $\sin^2 x$ and $\cos^2 x$:
+  \[
+    \begin{split}
+      \cos^2 x &= \frac{1 }{2} (1+\cos 2x) \\
+      \sin^2 x &= \frac{1 }{2} (1-\cos 2x)
+    \end{split}
+  \]
+  Using these equations we can create a general formula for solving trigonometric integrals depending on the parity of $n$.
+
+  \textbf{General formula for when $\int \sin^n / \cos^n x$ when $n$ is even.}
+
+  Take $\int \sin^{2m} x dx$ using the identities; we can solve through substitution.
+  \begin{equation}
+   \begin{split}
+     \int \sin^{2m} x dx&= \int (\sin^2 x)^m dx \\
+                      &= \int (\frac{1 }{2}(1-\cos2x))^m dx
+   \end{split} 
+  \end{equation}
+  We can then solve as a trivial integral.
+
+  \textbf{General formula for when $\int \sin^n / \cos^n x$ when $n$ is odd.}
+
+  Take $\sin^{2m+1} xdx$, we can apply a u-sub taking $u = \cos x$ and $du = -\sin x$.
+  \begin{equation}
+   \begin{split}
+     \int \sin^{2m+1}dx &= \int \sin^{2m} x \sin x dx \\
+                        &= \int (\sin^2 x)^m \sin x dx \\
+                        &= \int (1 - \cos^2 x)^m \sin dx \\
+                        &= -\int (1-u^2)^m du
+   \end{split} 
+  \end{equation}
+  If the integral contains both $\sin^n x$ and $\cos^m x$, such as $\int \cos^m x \sin^n x dx$, there are two situations which can occur, and we can solve both using the previous formulae:
+  \begin{enumerate}
+    \item If \textbf{either} $n$ or $m$ are \textbf{odd}, then simply take apply the odd formula on the function with the odd power, then the u-sub will natually substitute the remaining term.
+    \item If \textbf{both} $n$ and $m$ are \textbf{even}, you may apply the even formula to both and expand until you get all values in base terms, this may lead to expanding high degree polynomials.
+  \end{enumerate}
+
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 
