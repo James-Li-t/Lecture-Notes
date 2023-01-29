@@ -172,7 +172,7 @@
     \]
   \end{lemma}
 
-  \section{Projections and Spanning Spaces} 
+  \section{Projections, Linear Combinations and Span} 
   For some $\vec{a},\vec{b} \in \R^n$, a projection of $\vec{a}$ on $\vec{b}$ is defined as:
   \[
     \vectorproj[\vec{a}]{\vec{b}} = \frac{\vec{a}\cdot\vec{b}}{||\vec{a}||^2} \cdot \vec{a}
@@ -200,7 +200,109 @@
   \[
     A(\vec{a},\vec{b}) = \sqrt{G(\vec{a},\vec{b})}
   \]
-  \section{Placeholder} 
+  \subsection{Linear Combinations and Span}
+  Take some vectors $\vec{a},\vec{b} \in \R^n$, the linear combination($A$) of these vectors is simply:
+  \[
+    m \vec{a} + n\vec{b} = A\qquad n,m \in \R
+  \]
+  Span can be thought of as the set of values that you can reach by changing the constant in a linear combination of vectors, taking $\vec{a} = (1,2)$ and $\vec{b} = (2,3)$ the span would then be:
+  \[
+    span(a,b) = \R^2
+  \]
+  This is because you could theoretically reach any point in $\R^2$ by changing values of $m,n \in \R$, the exception to this is when both vectors are zero-vectors or when both vectors "align", in that case the set of values possible would only be the values extending the single line \textit{(e.g $\vec{a} = (1,0),\vec{b}=(-1,0)$) }.
+
+  \section{Matrices} 
+  A \textbf{matrix} $A$,  of $n \times m$ is defined as a rectangular array of $mn$ numbers arranged in $m,n$ rows and columns:
+  \[
+    A = \begin{pmatrix}
+      a_{1,1} & a_{1,2} & a_{1,3}& \dots & a_{1,n} \\
+      a_{2,1} & a_{2,2} & a_{2,3}&\dots & a_{2,n} \\
+      a_{3,1} & a_{3,2} & a_{3,3}&\dots & a_{3,n} \\
+      \vdots & \vdots & \vdots&\ddots & \vdots\\
+      a_{m,1} & a_{m,2} & a_{m,3}&\dots & a_{m,n} \\
+    \end{pmatrix}
+  \]
+  If we take only either columns or rows we can define:
+  \[
+    a_1 = \begin{pmatrix}
+      a_{1,1}  & a_{1,2} & \dots & a_{1,n}
+    \end{pmatrix} \textrm{ This is called a \textbf{Row Matrix}}
+  \]
+  \[
+    a_1 = \begin{pmatrix}
+      a_{1,1}  \\ a_{2,1} \\ \dots \\ a_{m,1}
+    \end{pmatrix} \textrm{ This is called a \textbf{Column Matrix}}
+  \]
+  \subsection{Properties of Matrices}
+  The \textbf{size} of a matrix is simply its number of rows $\times$ its number of columns:
+  \[
+    size\begin{pmatrix}
+      1 & 2 & 3 \\ 4 & 5 & 6 
+    \end{pmatrix} = 2\times 3 = 6
+  \]
+  The \textbf{transpose} of a matrix is defined as the matrix itself but with the rows and columns swapped, it is denoted with $^T$, take the previously defined matrix $A$, the transpose of $A = A^T$, would be denoted as:
+  \[
+    A^T = \begin{pmatrix}
+      a_{1,1} & a_{2,1} & a_{3,1}& \dots & a_{m,1} \\
+      a_{1,2} & a_{2,2} & a_{3,2}&\dots & a_{m,2} \\
+      a_{1,3} & a_{2,3} & a_{3,3}&\dots & a_{m,3} \\
+      \vdots & \vdots & \vdots&\ddots & \vdots\\
+      a_{1,n} & a_{2,n} & a_{3,n}&\dots & a_{m,n} \\
+    \end{pmatrix}
+  \]
+  Two matrices $A,B$ are said to be \textbf{equal}, if their size are the same and the respective entries are equal:
+  \[
+    A = \begin{pmatrix}
+      1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 
+    \end{pmatrix} =
+    \begin{pmatrix}
+      1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 
+    \end{pmatrix} = B
+  \]
+  Matrix \textbf{addition, subtraction and scalar multiplication} can all be achieved in the same method as their vector counterparts.
+  \subsection{Product of a Vector and Matrix}
+  The product of matrix $A$ with a row/column vector $X$ is a vector where the values are each entry in the row/column of $A$ multiplied by the $n$th element in $X$ for that row/column, then summed. For example, take $X = (x_1,x_2,x_3,\dots,x_n)$
+  \[
+    AX = \begin{pmatrix}
+      a_{1,1}x_{1} &+& a_{1,2}x_{1} &+& a_{1,3}x_{1} &+& \dots &+& a_{1,n}x_{1}\\
+      a_{2,1}x_{2} &+& a_{2,2}x_{2} &+& a_{2,3}x_{2} &+& \dots &+& a_{1,n}x_{2}\\
+      a_{3,1}x_{3} &+& a_{3,2}x_{3} &+& a_{3,3}x_{3} &+& \dots &+& a_{1,n}x_{3}\\
+      \vdots & \ & \vdots & \ & \vdots & \ & \vdots & \ & \vdots \\
+      a_{m,1}x_{n} &+& a_{m,2}x_{n} &+& a_{m,3}x_{n} &+& \dots &+& a_{m,n}x_{n}\\
+    \end{pmatrix}
+  \]
+  If $X = (\begin{smallmatrix} x_1 \\ x_2 \\ \dots \\ x_n  \end{smallmatrix})$ instead, then $AX$ would be:
+  \[
+    AX = \begin{pmatrix}
+      a_{1,1}x_{1} &+& a_{1,2}x_{2} &+& a_{1,3}x_{3} &+& \dots &+& a_{1,n}x_{n}\\
+      a_{2,1}x_{1} &+& a_{2,2}x_{2} &+& a_{2,3}x_{3} &+& \dots &+& a_{1,n}x_{n}\\
+      a_{3,1}x_{1} &+& a_{3,2}x_{2} &+& a_{3,3}x_{3} &+& \dots &+& a_{1,n}x_{n}\\
+      \vdots & \ & \vdots & \ & \vdots & \ & \vdots & \ & \vdots \\
+      a_{m,1}x_{1} &+& a_{m,2}x_{2} &+& a_{m,3}x_{3} &+& \dots &+& a_{m,n}x_{n}\\
+    \end{pmatrix}
+  \]
+  Note that a matrix and vector can only be multiplied if the number of columns of the matrix is equal to the number of elements in the vector. This can also be called the \textbf{image} of $X$ under $A$.
+  \subsection{Product of two Matrices}
+  Given matrcies $A,B$, their product $AB$, can be calculated by taking the \textbf{dot product} between the first row of $A$ with the first column of $B$, then the first row of $A$ with the second column of $B$, until the $n$th column of $B$, then you repeat the process until you reach the $n$th row of $A$. Take the following example:
+  \[
+    A = \begin{pmatrix}
+      1 & 2 \\ 3 & 4 
+    \end{pmatrix}
+    B = \begin{pmatrix}
+      5 & 6 \\ 7 & 8 
+    \end{pmatrix}
+  \]
+  \[
+    \begin{split}
+      AB = &((1,2) \cdot (5,7) + (1,2) \cdot (6,8))\\
+         & ((3,4)\cdot (5,7) + (3,4) \cdot (6,8))\\
+         &= \begin{pmatrix}
+           19 & 22 \\ 43 & 50
+         \end{pmatrix}
+    \end{split}
+  \]
+  Two matrices $A,B$ with sizes $size(A) = n \times m$ and $size(B) = i \times j$, with $n,m,i,j \in \R$, $AB$ can only be evaluated if $m = i$. The size of the resulting matrix $AB$ will be $n\times j$. Keep in mind that commutativity does apply in regard to matrix multiplication, hence $AB \not = BA$ may be true.
+
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 
