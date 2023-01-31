@@ -301,9 +301,68 @@
          \end{pmatrix}
     \end{split}
   \]
-  Two matrices $A,B$ with sizes $size(A) = n \times m$ and $size(B) = i \times j$, with $n,m,i,j \in \R$, $AB$ can only be evaluated if $m = i$. The size of the resulting matrix $AB$ will be $n\times j$. Keep in mind that commutativity does apply in regard to matrix multiplication, hence $AB \not = BA$ may be true.
+  Two matrices $A,B$ with sizes $size(A) = n \times m$ and $size(B) = i \times j$, with $n,m,i,j \in \R$, $AB$ can only be evaluated if $m = i$. The size of the resulting matrix $AB$ will be $n\times j$. Keep in mind that commutativity does apply in regard to matrix multiplication, hence $AB \not = BA$ may be true. Also keep in mind the following formula:
 
-  \section{Placeholder} 
+  \[
+    (AB)^T = B^T A^T
+  \]
+
+  \subsection{Square Matrices}
+  A square matrix is a matrix of $n \times n$ dimensions, for example:
+  \[
+    A = \begin{pmatrix}
+      a_{1,1} & a_{1,2} & a_{1,3}& \dots & a_{1,n} \\
+      a_{2,1} & a_{2,2} & a_{2,3}&\dots & a_{2,n} \\
+      a_{3,1} & a_{3,2} & a_{3,3}&\dots & a_{3,n} \\
+      \vdots & \vdots & \vdots&\ddots & \vdots\\
+      a_{n,1} & a_{n,2} & a_{n,3}&\dots & a_{n,n} \\
+    \end{pmatrix}
+  \]
+  The \textbf{trace} of a square matrix is defined as the sum of all the diagonal elements:
+  \[
+    tr(A) = a_{1,1} + a_{2,2} + \dots + a{n,n}
+  \]
+  If all the elemnts above/below the diagonal line in a matrix is 0, then the matrix is called a \textbf{lower/upper} triangle matrix respectively. If all values on either side of the diagonal are 0, then it is called a \textbf{upper and lower} triangle matrix.
+  \newpage
+  Let $A$ be a $n\times n $ matrix, the following properties then apply:
+  \begin{itemize}
+    \item If $A^T = A$ then $A$ is called \textbf{symmetric}.
+    \item $A^n = \Pi^n_0 A$ 
+    \item $A^0 = I$ where $I$ is an identity matrix with the same dimensions as $A$.
+  \end{itemize}
+  We define a diagonal matrix in the form $diag(a_{1,1},a_{2,2},\dots,a_{n,n})$ as follows:
+  \[
+    A = \begin{pmatrix}
+      a_{1,1} & 0 & 0& \dots & 0 \\
+      0 & a_{2,2} & 0&\dots & 0 \\
+      0 & 0 & a_{3,3}&\dots & 0 \\
+      \vdots & \vdots & \vdots&\ddots & \vdots\\
+      0 & 0 & 0&\dots & a_{n,n} \\
+    \end{pmatrix}
+  \]
+  Given some identity matrix $I$ with the same dimensions as the previous diagonal matrix, then the following property holds:
+  \[
+    IA = AI
+  \]
+  For a diagonal matrix, the following property also applies for some $k\in \R$:
+  \[
+    A = \begin{pmatrix}
+      a_{1,1} & 0 & 0& \dots & 0 \\
+      0 & a_{2,2} & 0&\dots & 0 \\
+      0 & 0 & a_{3,3}&\dots & 0 \\
+      \vdots & \vdots & \vdots&\ddots & \vdots\\
+      0 & 0 & 0&\dots & a_{n,n} \\
+    \end{pmatrix}^k = 
+    A = \begin{pmatrix}
+      a_{1,1}^k & 0 & 0& \dots & 0 \\
+      0 & a_{2,2}^k & 0&\dots & 0 \\
+      0 & 0 & a_{3,3}^k&\dots & 0 \\
+      \vdots & \vdots & \vdots&\ddots & \vdots\\
+      0 & 0 & 0&\dots & a_{n,n}^k \\
+    \end{pmatrix}
+  \]
+  Keep in mind this \textbf{only} applies to diagonal matrices.
+  \section{Row Echleon Form \& Reduced Row Echleon Form} 
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 
