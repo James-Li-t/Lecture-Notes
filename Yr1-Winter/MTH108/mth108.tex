@@ -363,6 +363,91 @@
   \]
   Keep in mind this \textbf{only} applies to diagonal matrices.
   \section{Row Echleon Form \& Reduced Row Echleon Form} 
+  \subsection{Elementary Row Operations}
+  There are 3 operations which can be performed on any matrix, with the result being considered \textbf{row equivalent} to the original matrix, meaning that they represent the same matrix (\textit{Think about how $\frac{4 }{3} = \frac{8 }{6}$}). From now on, the $n$th row of a matrix will be referred to as $Rn$, the operations are as follows:
+  \begin{enumerate}
+    \item \underline{Interchange two rows}\newline
+      \textbf{Example:} Interchange $R1$ with $R2$ in the following matrix.
+      \[
+        \begin{pmatrix}
+          1 & 2 & 3 & 4 \\  
+          5 & 6 & 7 & 8 \\  
+          9 & 10 & 11 & 12 \\  
+          13 & 14 & 15 & 16 \\  
+        \end{pmatrix} \overset{R1 \leftrightarrow R2}{\Rightarrow}
+        \begin{pmatrix}
+          5 & 6 & 7 & 8 \\  
+          1 & 2 & 3 & 4 \\  
+          9 & 10 & 11 & 12 \\  
+          13 & 14 & 15 & 16 \\  
+        \end{pmatrix}
+      \]
+    \item \underline{Multiply all elements in a row by some constant $>$ 0}\newline
+      \textbf{Example:} Multiply $R1$ by 3.
+      \[
+        \begin{pmatrix}
+          1 & 2 & 3 & 4 \\  
+          5 & 6 & 7 & 8 \\  
+          9 & 10 & 11 & 12 \\  
+          13 & 14 & 15 & 16 \\  
+        \end{pmatrix} \overset{R1 = 3R1}{\Rightarrow}
+        \begin{pmatrix}
+          3 & 6 & 9 & 12 \\  
+          5 & 6 & 7 & 8 \\  
+          9 & 10 & 11 & 12 \\  
+          13 & 14 & 15 & 16 \\  
+        \end{pmatrix}
+      \]
+    \item \underline{Add or Subtract some nonzero multiple of one row to another}\newline
+      \textbf{Example:} Add $3R2$ to $R1$.
+      \[
+        \begin{pmatrix}
+          1 & 2 & 3 & 4 \\  
+          5 & 6 & 7 & 8 \\  
+          9 & 10 & 11 & 12 \\  
+          13 & 14 & 15 & 16 \\  
+        \end{pmatrix} \overset{R1 = R1 + 3R2}{\Rightarrow}
+        \begin{pmatrix}
+          16 & 20 & 24 & 28 \\  
+          5 & 6 & 7 & 8 \\  
+          9 & 10 & 11 & 12 \\  
+          13 & 14 & 15 & 16 \\  
+        \end{pmatrix}
+      \]
+  \end{enumerate}
+  \subsection{Row Echleon Form (REF)}
+  For any matrix to be in row echleon form (REF), it must satisfy the following conditions:
+  \begin{itemize}
+    \item Every row of nonzero elements must be \underline{above} rows of all zero.
+    \item Each leading nonzero element of a row must be in a column to the \underline{right} of the leading element in the row above it.
+    \item Every element in the column \underline{below} a leading element must be zero.
+  \end{itemize}
+  Note however, every element in the column \underline{above} a leading element does not have to be zero. The following is a matrix in REF:
+  \[
+    \begin{pmatrix}
+      \fbox{1} & 2 & 0 & 1 \\  
+      0 & \fbox{2} & 3 & 1 \\  
+      0 & 0 & \fbox{4} & 0 \\  
+      0 & 0 & 0 & 0 \\  
+    \end{pmatrix}
+  \]
+  Where the elements encased with \fbox{\textit{Element}} are the leading elements of that row.
+  \subsection{Reduced Row Echleon Form (RREF)}
+  For any matrix to be in reduced row echleon form (RREF), it must satisfy the following conditions:
+  \begin{itemize}
+    \item The matrix is already in REF.
+    \item The leading nonzero entry in each row \textbf{must} be equal to 1.
+    \item Each leading 1 is the \textbf{only} nonzero element in the entire column.
+  \end{itemize}
+  If we performed row operations on the matrix from REF definition, it would look as follows in RREF:
+  \[
+    \begin{pmatrix}
+      1 & 0 & 0 & 0 \\  
+      0 & 1 & 0 & \frac{1 }{2} \\  
+      0 & 0 & 1 & 0 \\  
+      0 & 0 & 0 & 0 \\  
+    \end{pmatrix}
+  \]
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 

@@ -240,6 +240,21 @@
     \item If \textbf{either} $n$ or $m$ are \textbf{odd}, then simply take apply the odd formula on the function with the odd power, then the u-sub will natually substitute the remaining term.
     \item If \textbf{both} $n$ and $m$ are \textbf{even}, you may apply the even formula to both and expand until you get all values in base terms, this may lead to expanding high degree polynomials.
   \end{enumerate}
+  To evaluate an integral in the form $\int \sec^ndx$ or $\int \tan^n x dx$, keep in mind the following useful relations:
+  \begin{itemize}
+    \item $\frac{d }{dx} \tan x = \sec^2 x$
+    \item $\frac{d }{dx} \sec x = \sec x \tan x$
+    \item $\int \tan x dx = -ln|\cos x| + C$
+    \item $\int \sec x dx = ln(\sec x \tan x) + C$
+    \item $\tan^2 x + 1 = \sec^2 x$
+  \end{itemize}
+  Similarly to integrating $\int \sin^n x/ \cos^n x$, there are different cases to consider regarding whether $n$ is even or odd:
+  \begin{enumerate}
+    \item The Power of \textbf{Secant} is \textbf{even}, we isolate some $\sec^2$ from the $\sec^n$ term when applicable, then generally we could make a substitution with the $\tan^2 x +1$ relation, then perform a u-sub and solve.
+    \item The Power of \textbf{Tangent} is \textbf{odd}, we may try isolating some $\tan^2$ from the $\tan^n$ term when applicable, then it is possible to either make a substitution with the $\sec^2 - 1$ relation, or multiply by $\frac{\sec }{\sec}$ to then make a u-sub.
+    \item The Power of \textbf{Secant} is \textbf{odd}, pray that you can reduce into integration by parts, if the degree is $>$3 you may have to do this multiple times.
+    \item The Power of \textbf{Tangent} is \textbf{even}, we may isolate into $\tan^2$ from $\tan^n$, then substitute with $\sec^2 - 1$, distribute terms, and either split the integral or integrate directly with a u-sub.
+  \end{enumerate}
 
   \section{Placeholder} 
   \section{Placeholder} 
