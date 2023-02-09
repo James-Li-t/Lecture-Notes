@@ -195,6 +195,27 @@
       du = dx &,\quad v = \int \cos x dx = \sin x
     \end{aligned}
   \end{equation*}
+  \subsubsection{Partial Fraction Decomposition}
+  When given an integral in the form $\int \frac{P(x)}{Q(x)}dx$ where $P(x),Q(x)$ are some polynomials, you likely will be able to proceed by converting the term into partial fractions. Keep in mind that for this technique to work, the degree of $Q(x)$ must always be \textbf{higher} than $P(x)$ and $Q(x)$ must also be \textbf{factorable}.
+  The goal is to take $Q(x)$ into multiple factors, then find some $\frac{a }{q_1(x)} + \frac{b }{q_2(x)} \dots = \frac{P(x)}{Q(x)}$, where $q_n(x)$ are factors of $Q(x)$.
+
+  \textbf{Ex.} Evaluate $\int \frac{1 }{x^2-1} dx$. We can see that $x^2-1 = (x+1)(x-1)$:
+  \begin{equation*}
+    \begin{aligned}
+      & \int \frac{1 }{x^2-1} dx\\
+      &= \int \frac{1 }{(x-1)(x+1)} dx\\
+      &= \int \frac{-1 }{2} (\frac{1 }{x+1}) + \frac{1 }{2}(\frac{1 }{x-1}) dx \\
+      &= \frac{-1 }{2} ln|x+1| + \frac{1 }{2} ln|x-1| + C
+    \end{aligned}
+    \qquad \Leftarrow \qquad
+    \begin{aligned}
+      \frac{1 }{x^2-1} &=\frac{a }{x+1} + \frac{b }{x-1} \\
+                     1 &=a(x-1) + b(x+1)\\
+                       &= ax - a + bx + b \\
+       0x + 1                &= x(a+b) + (b-a) \\ 
+                       &\rightarrow a = \frac{-1 }{2}, \quad b = \frac{1 }{2}
+    \end{aligned}
+  \end{equation*}
   \subsection{Particular Techniques}
   \subsubsection{Trigonometric Integrals}
   To evaluate an integral in the form $\int \sin^n x$ or $\int \cos^n x$, where $n$ is some integer, recall the following two trigonometric identities:
@@ -255,6 +276,16 @@
     \item The Power of \textbf{Secant} is \textbf{odd}, pray that you can reduce into integration by parts, if the degree is $>$3 you may have to do this multiple times.
     \item The Power of \textbf{Tangent} is \textbf{even}, we may isolate into $\tan^2$ from $\tan^n$, then substitute with $\sec^2 - 1$, distribute terms, and either split the integral or integrate directly with a u-sub.
   \end{enumerate}
+  \subsubsection{Trigonometric Substitutions}
+
+  The following equations are useful creating simple substitutions. If you can simplify a term to these forms then the substitutions may make the integral much easier to evaluate.
+
+  \begin{itemize}
+    \item $\sqrt{a^2-x^2} \rightarrow x =a \sin\theta \quad dx = a\cos\theta d\theta$
+    \item $\sqrt{a^2+x^2} \rightarrow x =a \tan\theta \quad dx = a\sec^2\theta d\theta$
+    \item $\sqrt{x^2-a^2} \rightarrow x =a \sec\theta \quad dx = a\sec\theta\tan\theta d\theta$
+  \end{itemize}
+  Keep in mind that after substituting, your integral will be derived with respect to $\theta$ rather than $x$, thus you must relate the final answer back in terms of $x$.
 
   \section{Placeholder} 
   \section{Placeholder} 

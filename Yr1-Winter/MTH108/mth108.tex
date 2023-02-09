@@ -422,7 +422,7 @@
     \item Each leading nonzero element of a row must be in a column to the \underline{right} of the leading element in the row above it.
     \item Every element in the column \underline{below} a leading element must be zero.
   \end{itemize}
-  Note however, every element in the column \underline{above} a leading element does not have to be zero. The following is a matrix in REF:
+  Note however, every element in the column \underline{above} a leading element does not have to be zero. The first nonzero element in a row is called the \textbf{pivot} and every column with a pivot element is called a \textbf{pivot column}. The following is a matrix in REF:
   \[
     \begin{pmatrix}
       \fbox{1} & 2 & 0 & 1 \\  
@@ -448,7 +448,50 @@
       0 & 0 & 0 & 0 \\  
     \end{pmatrix}
   \]
-  \section{Placeholder} 
+  \subsection{Ranks and Nullities}
+  \begin{itemize}
+    \item The \textbf{rank} of some matrix $A$ is the number of pivots it contains.
+    \item The \textbf{nullity} of some matrix $A$ is the number of columns $n$ minus the rank.
+  \begin{theorem}
+    For any matrix $A$, the following statements hold,
+    \begin{enumerate}
+      \item $r(A) = r(A^t)$
+      \item $r(A) \le min\{m,n\}$, where $m,n$ are dimensions of $A$.
+    \end{enumerate}
+  \end{theorem}
+  
+  \end{itemize}
+  \section{Invertibility of a Matrix} 
+  \subsection{The Inverse of a Square Matrix}
+  Given a matrix $A_{n\times n}$, the inverse of A; $\frac{1 }{A_{n,n}}$ is defined as:
+  \begin{defn}
+    If there exists $B_{n\times n}$, such that $AB=I$, then $A$ is \textbf{invertible} and:
+    \[
+      A^{-1}=B\rightarrow AA^{-1} = I
+    \]
+  \end{defn}
+  \newpage
+  \noindent
+  For some $2\times 2$ matrix $A$; $A$ is invertible if $|A| = |\begin{smallmatrix} a & b \\ c & d \end{smallmatrix}| = ad - bc \neq 0$. The following properties apply for all $2\times 2$ matrcies.
+  \begin{enumerate}
+    \item $|A| = 0 \rightarrow A^{-1} = \frac{1 }{|A|} \begin{pmatrix}
+        d & -b \\
+        -c & a
+    \end{pmatrix}$
+  \item $r(A) = 2 \rightarrow$ $A$ is invertible.
+  \item $r(A) \le 1 \rightarrow$ $A$ is not invertible.
+  \end{enumerate}
+  For all matrices of $n \times n$, $A$, the following apply:
+  \begin{enumerate}
+    \item $r(A) = n \rightarrow A$ is invertible.
+    \item $|A| \neq 0 \rightarrow A$ is invertible.
+    \item $(AB)^{-1} = B^{-1}A^{-1}$
+    \item $(kA)^{-1} = k^{-1}A^{-1}, k \neq 0$ for some constant $k$.
+  \end{enumerate}
+  If $A$ is determined to be invertible, take the following steps to find $A^{-1}$:
+  \[
+    (A|I) \rightarrow (B|C)_{REF} \rightarrow (I|A)_{RREF}
+  \]
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 
