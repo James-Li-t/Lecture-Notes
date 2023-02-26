@@ -5,7 +5,7 @@
 \author{James Li | 501022159 \and Professor: L. Kolasa\and Email: lkolasa@torontomu.ca}
 \date{}
 
-\renewcommand{\contentsname}{\centering Content by Week}
+\renewcommand{\contentsname}{\centering Table of Contents}
 
 \begin{document}
   \maketitle
@@ -284,11 +284,42 @@
     \item $\sqrt{a^2-x^2} \rightarrow x =a \sin\theta \quad dx = a\cos\theta d\theta$
     \item $\sqrt{a^2+x^2} \rightarrow x =a \tan\theta \quad dx = a\sec^2\theta d\theta$
     \item $\sqrt{x^2-a^2} \rightarrow x =a \sec\theta \quad dx = a\sec\theta\tan\theta d\theta$
+
   \end{itemize}
   Keep in mind that after substituting, your integral will be derived with respect to $\theta$ rather than $x$, thus you must relate the final answer back in terms of $x$.
 
-  \section{Placeholder} 
-  \section{Placeholder} 
+  \section{Infinite limits of Integration} \label{sec:improper integrals}
+  Given some improper integral in the forms:
+  \begin{itemize}
+    \item $\int^\infty_{a} f(x) dx$, we can rewrite as: $\underset{b\rightarrow \infty}{lim}\int^b_a f(x)dx$.
+    \item $\int^b_{-\infty} f(x) dx$, we can rewrite as: $\underset{a\rightarrow -\infty}{lim}\int^b_a f(x)dx$.
+    \item $\int^\infty_{-\infty} f(x) dx$, we can rewrite as: $\int^c_{-\infty} f(x) dx + \int^\infty_{c} f(x) dx$, for some arbitrary $c$.
+  \end{itemize}
+  Then we simply evaluate the integral and take the limit. If you can evaluate the integral as it tends to infinity, then you say that the integral \textbf{converges} to some number, otherwise it \textbf{diverges}, meaning it is unevaluatable (\textit{limit does not exist or is infinite}).
+  \subsection{Comparison Test for Integrals}
+  Given some functions $f(x)$ and $g(x)$, if $0 \le g(x) \le f(x)$ then:
+
+  \begin{itemize}
+    \item If $f(x)$ \textbf{converges} $\rightarrow g(x)$ \textbf{converges}.
+    \item If $g(x)$ \textbf{diverges} $\rightarrow f(x)$ \textbf{diverges}.
+  \end{itemize}
+
+  \section{Sequences \& Series} 
+  Given some sequence of numbers in the form:
+  \[
+    a_1,a_2,a_3,\dots,a_n\ \}\ a_n = f(n)
+  \]
+  Where we can define some function $f$ to represent every element of $a_n$. We can then use infinite limits of integration~(\ref{sec:improper integrals}) to evaluate whether the sequence of numbers converges. 
+  \[
+    a_n = f(n) \rightarrow \underset{x\rightarrow \infty}{lim} f(x) = L \rightarrow \underset{n\rightarrow \infty}{lim} a_n = L
+  \]
+  Given some $\underset{n\rightarrow \infty}{lim} a_n = L$ and $\underset{n\rightarrow \infty}{lim} b_n = K$, the following properties hold:
+  \begin{itemize}
+    \item $\underset{n\rightarrow \infty}{lim} a_n + b_n = L + K$
+    \item $\underset{n\rightarrow \infty}{lim} a_n - b_n = L - K$
+    \item $\underset{n\rightarrow \infty}{lim} a_n  b_n = L  K$
+    \item $\underset{n\rightarrow \infty}{lim} \frac{a_n}{b_n } = \frac{F }{K}$, when $K \neq 0$
+  \end{itemize}
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 

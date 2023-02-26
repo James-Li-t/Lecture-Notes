@@ -4,7 +4,7 @@
 \title{MTH108 | Linear Algebra}
 \author{James Li | 501022159 \and Professor: K. Q. Lan\and Email: klan@torontomu.ca}
 \date{}
-\renewcommand{\contentsname}{\centering Content by Week}
+\renewcommand{\contentsname}{\centering Table of Contents}
 \begin{document}
   \maketitle
   \tableofcontents
@@ -572,7 +572,19 @@
     \item $A \overset{\displaystyle{R_i(c)+R_j }}{\longrightarrow} B$, then $|A| = |B|$
   \end{itemize}
   After finding the upper triangle matrix, evaluating the determinant should be straight forward, as you can simply take the expansion of the bottom row, which will be all 0 except for the final element, meaning you would only have to perform expansion operations using the final element.
-  \section{Placeholder} 
+  \subsection{Properties of Determinants}
+  Given some matrix $A \in \R^{n\times n}$, the following properties hold:
+  \begin{itemize}
+    \item $A$ is invertible $\Leftrightarrow r(A) = n$ or $|A| \neq 0$
+    \item $(A|I)$ can be changed into $(I|A^{-1})$
+    \item $|AB| = |A||B| \rightarrow |AA^{-1}| = |A||A^{-1}| = 1$
+    \item $|A^T| = |A|$
+    \item $|kA| = k^n|A|$
+  \end{itemize}
+  \section{Systems of Linear Equations} 
+  \subsection{Gaussian Elimination}
+  \subsection{Gauss-Jordan Elimination}
+  \subsection{Inverse Matrix Method \& Cramer\textquotesingle s rule}
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 

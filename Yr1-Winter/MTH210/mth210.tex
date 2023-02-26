@@ -5,7 +5,7 @@
 \author{James Li | 501022159 \and Professor: M. Delcourt\and Email: mdelcourt@torontomu.ca}
 \date{}
 
-\renewcommand{\contentsname}{\centering Content by Week}
+\renewcommand{\contentsname}{\centering Table of Contents}
 
 \begin{document}
   \maketitle
@@ -167,9 +167,89 @@
     Hence $P(k+1)$ is true.
   \end{proof}
   
-  \section{Placeholder} 
-  \section{Placeholder} 
-  \section{Placeholder} 
+  \newpage
+  \section{Trails, Paths and Circuits} 
+  \textit{Recall the following: }
+  \begin{itemize}
+    \item Given some graph $G$, the \textbf{vertex set} of $G$ is denoted as $V(G)$ and the \textbf{edge set} of $G$ is denoted as $E(G)$.
+    \item A \textbf{simple} graph has no parallel edges or loops and is assumed to always be finite.
+    \item The \textbf{degree} of a vertex is the number of edges \textbf{incident} on itself, edges that loop are counted twice.
+    \item Complete graphs are fully connected simple graphs.
+  \end{itemize}
+  Given some graph $G$ with vertices $v,w \in G$, a \textbf{walk} from $v$ to $w$ is defined as a fininte alternating sequence of adjacent vertices and edges, in the form:
+  \[
+    v_0e_1,v_1e_2,v_2e_3,\dots,v_{n-1}e_n \rightarrow w
+  \]
+  Example of a walk between $v = v_0$ and $w=v_4$ on some graph $G$:
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=0.3\textwidth]{img/2023-02-26-06-15-33.png}
+      \caption*{\textit{This would be denoted as:} $ve_1, v_1e_2, v_2e_3, v_3e_4$}
+      \label{fig:walk}
+    \end{center}
+  \end{figure}
+
+  \noindent Two vertices $v$ and $w$ are said to be \textbf{connected} if there exists a walk between them. The graph $G$ is said to be connected if there exists a walk between every pair of vertices within it, otherwise it is called \textbf{disconnected}.
+  \begin{itemize}
+    \item \textbf{Trails} are walks without repeated \textbf{edges}.
+    \item \textbf{Paths} are trails without repeated \textbf{vertices}.
+    \item \textbf{Closed Walks} start and end on the \textbf{same vertex}.
+    \item \textbf{Circuits} are closed walks that contain no \textbf{repeated edges} and contain at least one edge.
+    \item \textbf{Simple Circuits} are circuits that contain no \textbf{repeated vertices} except the first and last.
+  \end{itemize}
+  
+  \subsection{Euler Circuits}
+  Given some graph $G$, an \textbf{Euler Circuit} for $G$ is defined as a circuit in $G$ which contains every vertex and edge in $G$. Meaning it starts and ends at the same vertex and contains all vertices with no repeated edges.
+  \begin{itemize}
+    \item If a graph has an Euler Circuit, then the graph must have a positive \textbf{even} degree.
+    \item If a graph has an \textbf{odd} degree, then it does not have a Euler Circuit.
+    \item A graph $G$, has a Euler Circuit if and only if, $G$ is connected and every vertex of $G$ has a positive even degree.
+  \end{itemize}
+  \subsection{Euler Trails}
+  Given some graph $G$, an \textbf{Euler Trail} for $G$ from vertices $v,w \in G$, is defined as a sequence of adjacent edges and vertices from $v$ to $w$ that passes through every edge \textbf{exactly one} and every vertex \textbf{at least once}.
+  \begin{itemize}
+    \item A graph $G$ only has an Euler Trail from $v$ to $w$, if $v,w$ have odd degree whilst every other vertex has even degree.
+  \end{itemize}
+  \subsection{Subgraphs}
+  Given graphs $G,H$. $H$ is said to be a \textbf{subgraph} of $G$ if:
+  \[
+    V(H) \subseteq V(G), E(H) \subseteq E(G) \textrm{ and every edge in $H$ has the same endpoints in $G$.}
+  \]
+  All graphs are considered subgraphs of themselves.
+  \subsection{Hamiltonian Circuits}
+  Given a graph $G$, a \textbf{Hamiltonian Circuit} for $G$ is defined as a simple circuit which includes every vertex of $G$, meaning it is a sequence of adjacent vertices and distinct edges where every vertex appears once, except for the first and last vertex, which are the same.
+  \section{Isomorphisms of Graphs} 
+  \textit{Recall the following:}
+  \begin{itemize}
+    \item Injective/One-to-one Functions: $f: X\rightarrow Y$ maps all elements in the domain of $X$ on $Y$ \textbf{distinctly}.
+    \item Surjective/Onto Functions: $f: X \rightarrow Y, \forall y \in Y, \exists x \in X$ such that $f(x) = y$.
+    \item Bijective Functions: $f: X \rightarrow Y$ such that $f$ is both one-to-one \textbf{and} onto.
+  \end{itemize}
+  Given graphs $G,G^\prime$ with vertex sets $V(G),V(G^\prime)$ and edge sets $E(G),E(G^\prime)$, we say $G$ is \textbf{Isomorphic} to $G^\prime$, if and only if there exists \textbf{one-to-one} correspondences, $g: V(G) \rightarrow V(G^\prime)$ and $h: E(G) \rightarrow E(G^\prime)$, that preserves adjacencies for each $v \in V(G), e \in E(G)$.
+  \[
+    v \textrm{ is an endpoint of } e \Leftrightarrow g(v) \textrm{ is and endpoint of } h(e)
+  \]
+  To determine if two graphs are isomorphic, start by mapping a \textbf{bijection} between vertices and edges relative between the two graphs and see if the function holds.
+  \subsection{Isomorphism of Simple Graphs}
+  Given simple graphs $G,G^\prime$, they are isomorphic if $[u,v]$ is an edge in $G \Leftrightarrow [g(u),g(v)]$ is an edge in $G^\prime$ and preserves adjacencies. The difference between this definition and the standard graph isomorphism definition is that for simple graphs we do not have to consider correspondence between the edge sets of the two graphs.
+
+  \subsection{Invariants for Graph Isomorphism}
+  Given graphs $G,G^\prime$, a property $P$ is called an \textbf{invariant} for graph isomorphism, if and only if, $G$ has the property $P$ and $G$ is isomorphic to $G^\prime \rightarrow G^\prime$ has the property $P$. The following properties are invariants for graph isomorphism, where $n,m,k$ are non-negative positive integers.
+  \begin{multicols}{2}
+   \begin{enumerate}
+    \item has $n$ vertices.
+    \item has $m$ edges.
+    \item has a vertex of degree $k$.
+    \item has $m$ vertices of degree $k$.
+    \item has a circuit length $k$.
+    \item has a simple circuit of length $k$.
+    \item has $m$ simple circuits of length $k$.
+    \item is connected.
+    \item has an Euler Circuit.
+    \item has a Hamiltonian Circuit.
+   \end{enumerate} 
+  \end{multicols}
+  \section{Trees} 
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 
