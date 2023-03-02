@@ -432,7 +432,7 @@
     \end{pmatrix}
   \]
   Where the elements encased with \fbox{\textit{Element}} are the leading elements of that row.
-  \subsection{Reduced Row Echleon Form (RREF)}
+  \subsection{Reduced Row Echleon Form (RREF)}\label{rref}
   For any matrix to be in reduced row echleon form (RREF), it must satisfy the following conditions:
   \begin{itemize}
     \item The matrix is already in REF.
@@ -581,9 +581,62 @@
     \item $|A^T| = |A|$
     \item $|kA| = k^n|A|$
   \end{itemize}
+  \newpage
   \section{Systems of Linear Equations} 
-  \subsection{Gaussian Elimination}
+  \subsection{Gaussian Elimination}\label{gausselim}
+  Gaussian Elimination is a technique for solving systems of equations in the form:
+  \[
+    Ax = b 
+  \]
+  For some matrix $A \in \R^{n\times n}$ as the coefficient for some column vector $x \in \R^n$, where the dot product is some column vector $b \in \R^n$. Take the following steps to perform Gaussian Elimination:
+
+  \begin{enumerate}
+    \item Rewrite the system of equations as an augmented matrix with $(A|b)x$ 
+      \[
+        \begin{bmatrix}[ccccc|c]
+          a_{1,1} & a_{1,2} & a_{1,3}& \dots & a_{1,n} & b_1\\
+          a_{2,1} & a_{2,2} & a_{2,3}&\dots & a_{2,n} & b_2\\
+          a_{3,1} & a_{3,2} & a_{3,3}&\dots & a_{3,n} & b_3\\
+          \vdots & \vdots & \vdots&\ddots & \vdots& \vdots\\
+          a_{n,1} & a_{n,2} & a_{n,3}&\dots & a_{n,n} & b_n\\
+        \end{bmatrix}
+        \begin{bmatrix}
+         x_1 \\ x_2 \\ x_3 \\ \vdots \\ x_n 
+        \end{bmatrix}
+      \]
+    \item Then using row operations, convert the augmented matrix $A|b$ into an \textbf{upper triangle matrix} (\textit{see} \ref{squaremat}) 
+      \[
+        \begin{bmatrix}[ccccc|c]
+          a_{1,1}^\prime & a_{1,2}^\prime & a_{1,3}^\prime& \dots & a_{1,n}^\prime & b_1^\prime\\
+          0 & a_{2,2}^\prime & a_{2,3}^\prime&\dots & a_{2,n}^\prime & b_2^\prime\\
+          0 & 0 & a_{3,3}^\prime&\dots & a_{3,n}^\prime & b_3^\prime\\
+          \vdots & \vdots & \vdots&\ddots & \vdots& \vdots\\
+          0 & 0 & 0&\dots & a_{n,n}^\prime & b_n^\prime\\
+        \end{bmatrix}
+        \begin{bmatrix}
+         x_1 \\ x_2 \\ x_3 \\ \vdots \\ x_n 
+        \end{bmatrix}
+      \]
+    \item Then solve the equation of the $n$th row, for $x_n$, then substitute back into the $(n-1)$th row and solve recursively.
+  \end{enumerate}
   \subsection{Gauss-Jordan Elimination}
+  When using Gaussian Elimination to solve a system of equations, you will result with an augmented matrix $A|b$ where the matrix $A$ will be in row echleon form, if you simply continue reducing $A|b$ until $A$ is in reduced-row echleon form (\textit{see} \ref{rref}), where then solving for each $x_n$ will be trivial as there will only be one coefficient for each variable, this is called \textbf{Gauss-Jordan Elimination}.
+  \begin{enumerate}
+    \item Taking the augmented matrix from (\ref{gausselim}), we can continue reducing until reaching
+      \[
+        \begin{bmatrix}[ccccc|c]
+          1 & 0 & 0& \dots & 0 & b_1^\prime\\
+          0 & 1 & 0&\dots & 0 & b_2^\prime\\
+          0 & 0 & 1&\dots & 0 & b_3^\prime\\
+          \vdots & \vdots & \vdots&\ddots & \vdots& \vdots\\
+          0 & 0 & 0&\dots & 1 & b_n^\prime\\
+        \end{bmatrix}
+        \begin{bmatrix}
+         x_1 \\ x_2 \\ x_3 \\ \vdots \\ x_n 
+        \end{bmatrix}
+      \]
+    \item We can observe then that simply $x_n = b_n^\prime$
+  \end{enumerate}
   \subsection{Inverse Matrix Method \& Cramer\textquotesingle s rule}
   \section{Placeholder} 
   \section{Placeholder} 
