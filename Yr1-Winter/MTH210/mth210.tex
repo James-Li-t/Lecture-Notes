@@ -249,7 +249,41 @@
     \item has a Hamiltonian Circuit.
    \end{enumerate} 
   \end{multicols}
+  \newpage
   \section{Trees} 
+  \subsection{Characterizing Trees}
+  If $n$ is a positrive integer then any tree with $n$ vertices has $n-1$ edges, the converse to this face is that any connected graph with $n$ vertices and $n-1$ edges is a tree.
+  \begin{itemize}
+    \item If even one new edge (not vertex) is added to a tree then the graph must contain a circuit.
+    \item Removing an edge from a circuit does not disconnect a graph.
+    \item It can be shown that every connected graph has a subgraph that is a tree.
+    \item If $n$ is a positive integer any graph with $n$ vertices and fewer than $n-1$ edges is not connected.
+  \end{itemize}
+  Let $T$ be a tree, if $T$ has at least 2 vertices , then a vertex of degree 1 in $T$ is called a \textbf{leaf} or a \textbf{terminal vertex}, and a vertex of degree greater than 1 in $T$ is called an \textbf{internal vertex} or \textbf{branch vertex}. The unique vertex in a trivial tree is also called a \textbf{leaf}.
+  \subsection{Spanning Trees}
+  A spanning tree for a graph $G$ is a subgraph of $G$ that contains every vertex of $G$ and is a tree. Every connected graph $G$ has at least 1 spanning tree and any two spanning trees for a graph have the same number of edges.
+  \subsection{Weighted Graph}
+  A \textbf{weighted graph} is a graph for which each edge has an associated positive real number called \textbf{weight}. The sum of all the edges is called the \textbf{total weight} of the graph. A \textbf{minimum spanning tree} (MST) for a connected weighted graph, is a spanning tree that has the least possible total weight compared to all other spanning trees for the graph. If $G$ is a weighted graph and $e$ is an edge of $G$ then $w(e)$ denotes the weight of $e$ and $w(G)$ denotes the total weight of $G$.
+  \subsection{Algorithms for finding Minimum Spanning Trees}
+  Types of Algorithms:
+  \begin{itemize}
+    \item Brute Force: Simply finding every spanning tree and comparing the total weights of each.
+    \item Greedy Algorithms: Making a sequence of locally optimal moves can lead  to a globally optimal solution.
+  \end{itemize}
+  \subsubsection{Kruskal\textquotesingle s Algorithm}
+  In this algorithm, the edges of a connected, weighted graph are examined one by one in order of increasing weight, then:
+  \begin{enumerate}
+    \item Initialize $T$ to have all the vertices of $G$ and no edges.
+    \item Let $E$ be the set of all the edges of $G$, and let $m := 0$ 
+    \item \textbf{while} ($m < n-1$)
+      \subitem Find an edge $e$ in $E$ of least weight.
+      \subitem Delete $e$ from $E$.
+      \subitem \textbf{if} addition of $e$ to the edge set of $T$ does not produce a circuit 
+      \subitem \textbf{then} add $e$ to the edge set of $T$ and set $m:= m+1$
+    \item The resulting $T$ will be the MST of the input graph.
+
+  \end{enumerate}
+  \subsubsection{Prim\textquotesingle s Algorithm}
   \section{Placeholder} 
   \section{Placeholder} 
   \section{Placeholder} 
