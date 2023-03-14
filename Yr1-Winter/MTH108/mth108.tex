@@ -672,7 +672,33 @@
   \end{equation}
   Where $D$ is the determinant of $A$ and $D_n$ is the determinant of $A$ with the $n$th column replaced by $b$.
   \subsection{Consistency of Systems of Linear Equations}
+  Given a system of equations in the form $Ax = b$, we can determine the consistency of the system by observing the rank of the coefficient matrix $A$:
+  \begin{itemize}
+    \item $r(A) = r(A|b) = n \Rightarrow$ There exists a \textbf{unique} solution.
+    \item $r(A) = r(A|b) < n \Rightarrow$ There exists \textbf{infinitely} many solutions.
+    \item $r(A) < r(A|b) \Rightarrow$ There exists \textbf{no} solution.
+  \end{itemize}
+  \subsection{Linear Combination, Spanning Space and Consistency}
   \section{Linear Transformations} 
+  Let $A$ be a $n\times m$ matrix, a \textbf{linear transformation} from $\R^n$ to $\R^m$ denoted $T$ is:
+  \[
+    T(\vec{x})= A\vec{x} = 
+    \begin{pmatrix}
+      a_{11} & \dots & a_{1n} \\
+      \vdots & \ddots & \vdots \\
+      a_{m1} & \dots & a_{mn}
+    \end{pmatrix}
+    \begin{pmatrix}
+     x_1 \\
+     \vdots \\
+     x_n
+    \end{pmatrix}
+  \]
+  We can also say that $T$ \textbf{maps} $\R^n$ to $\R^m$, denoted as:
+  \[
+    T: \R^n \rightarrow \R^m
+  \]
+  \subsection{One-to-one, Onto and Inverse Functions}
   \section{Placeholder} 
   \section{Placeholder} 
 \end{document}
