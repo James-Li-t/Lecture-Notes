@@ -849,9 +849,9 @@
       \begin{itemize}
         \item Through some angle $\theta$: 
         $T 
-        (\begin{smallmatrix}
+        \begin{pmatrix}
          x \\ y 
-        \end{smallmatrix}) = 
+        \end{pmatrix} = 
         \begin{pmatrix}
           \cos\theta & -\sin\theta \\
           \sin\theta & \cos\theta 
@@ -905,5 +905,39 @@
     V = |\vec{c} \cdot (\vec{a} \times \vec{b})|
   \]
   \subsection[Equations of Lines]{Equations of Lines in $\R^3$}
+  To describe a line in $\R^3$, we use the following parametric equation:
+  \[
+    x_1 = a_1+tb_1, x_2 = a_2 +tb_2, x_3 = a_3 + tb_3, t \in \R
+  \]
+  We attribute the values of $a_n$ as the points on the line, $b_n$ as the direction the line travels in $x_n$ respectively. We can rewrite this equation by taking the values of $x_n,a_n,b_n$ as vectors, making:
+  \[
+    \vec{x} = \vec{a} + t\vec{b}, t \in \R
+  \]
+  Where $\vec{a}$ is the point of the lin and $\vec{b}$ is the direction vector.
   \subsection[Equations of Planes]{Equations of Planes in $\R^3$}
+  Given a point $P(x,y,z)$ in the plane $P$ and a vector, $\vec{n} \perp P$. $\vec{n}$ is called the \textbf{Normal Vector} of the plane. We can derive the following properties:
+  \begin{itemize}
+    \item $\vec{n} \perp \vec{w}$, where, $\vec{w} // p $
+    \item $\vec{n} \perp l$, where, $l$ is in the Plane $P$.
+    \item $\vec{n} \perp V_1$ and $\vec{n} \perp V_2$, where $V_1 \lnot (//) V_2$ and $V_1,V_2 // P$
+  \end{itemize}
+  The general form for the equation of a point in a plane in $\R^3$ is:
+  \[
+    ax + by + c\delta = d
+  \]
+  \[
+    d = (a,b,c)
+    \begin{pmatrix}
+      x_o \\ y_o \\ z_o
+    \end{pmatrix}
+  \]
+  To find the equation of a plane in $\R^3$:
+  \begin{enumerate}
+    \item Take any point $P_0(x_0,y_o,z_0)$ on the plane.
+    \item Find vector $\vec{n}$ that is normal to the plane by taking the cross product of two non-parallel vectors $\vec{a},\vec{b}$, which are parallel to the plane.
+    \item Write the answer in the form $ax+by+cz = d$.
+  \end{enumerate}
+  \subsection{Linear Independence}
+  \section{Eigenvalues and Diagonalizability}
+  \subsection{Eigenvalues and Eigenvectors}
 \end{document}
