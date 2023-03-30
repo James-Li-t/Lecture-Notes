@@ -321,21 +321,119 @@
     \item $\underset{n\rightarrow \infty}{lim} a_n  b_n = L  K$
     \item $\underset{n\rightarrow \infty}{lim} \frac{a_n}{b_n } = \frac{F }{K}$, when $K \neq 0$
   \end{itemize}
-  \subsection{Bounded, Monotonic Sequences}
+  \subsection{Bounded, Monotonic Series}
+  A series $a_n$ is called \textbf{Monotonic} if it is only either \textbf{increasing} or \textbf{decreasing}. We say that $a_n$ is \textbf{bounded above}, if there exists $a_n \le M$ for all n. We say that $a_n$ is \textbf{bounded below} if there exists $N \leq a_n$ for all $n$. If $a_n$ is both bounded above and below then it is referred to as just \textbf{bounded}.
   \subsection{Convergence of Series}
-  \subsubsection{Absolute Convergence}
-  \subsubsection{Condictional Convergence}
+  For a series to converge, means that there is some number that can be evaluated from the sum of some series $\sum_{n=0}^\infty a_n$. For example, a \textbf{Telescoping Series} defined:
+  \[
+    \sum_{n=0}^\infty \displaystyle\frac{1 }{n(n+1)}
+  \]
+  Converges to \textbf{1} because it is possible to rewrite the sum using the identity:
+  \[
+    \displaystyle\frac{1 }{n(n+1)} = \displaystyle\frac{1 }{n} - \displaystyle\frac{1 }{n+1}
+  \]
+  We can than expand as observe that the terms inbetween the first and last naturally cancel out, since the last term is decreasing and approaches 0, we can take that the sum of this series is \textbf{1}. 
+  \subsubsection{Convergence of A Geometric Series}
+  Given some $c \neq 0$ and some $|r| < 1$, then the following series \textbf{converges} to:
+  \[
+    \sum_{n=0}^\infty cr^n = \displaystyle\frac{c }{1-r}
+  \]
+  If $|r| \geq 1$ then the series \textbf{diverges}.
+  \subsubsection{Convergence of p-series}
+  The infinite series defined:
+  \[
+    \sum_{n=0}^\infty \displaystyle\frac{1 }{n^p} 
+  \]
+  \textbf{Converges} only if $p > 1$ and \textbf{diverges} otherwise.
+  \subsection{Absolute and Conditional Convergence}
+  \textbf{Absolute Convergence} states that a series $\sum_{n=0}^\infty a_n$ \textbf{converges absolutely} if $\sum_{n=0}^\infty |a_n|$ converges. \newline \hfill
+  \noindent\textbf{Conditional Convergence} states that a series $\sum_{n=0}^\infty a_n$ \textbf{converges conditionally} if $\sum_{n=0}^\infty |a_n|$ diverges but $\sum_{n=0}^\infty a_n$ converges.
   \section{Techniques of Evaluating Convergence of Series} 
   \subsection[Divergence Theorem]{$n$th term Divergence Theorem}
+  This theorem states that for some series, $\sum_{n=0}^\infty a_n$, if:
+   \[
+    \lim_{n \rightarrow \infty} a_n \neq 0 
+   \] 
+   Then the series \textbf{diverges}. However keep in mind that $\lim_{n \rightarrow \infty} a_n = 0$ does \textbf{not} necessarily indicate convergence (ex. $\sum_{n=0}^\infty \displaystyle\frac{1 }{n}$ diverges).
   \subsection{Integral Test}
+  Let $a_n = f(n)$, where $f$ is positive, decreasing and continuous, for $x, x\geq 1$. Then the following apply:
+  \begin{enumerate}
+    \item If $\int_1^\infty f(x)$ \textbf{converges}, then $\sum_{n=1}^\infty a_n$ \textbf{converges}.
+    \item If $\int_1^\infty f(x)$ \textbf{diverges}, then $\sum_{n=1}^\infty a_n$ \textbf{diverges}.
+  \end{enumerate}
   \subsection{Direct Comparison Test}
+  Let $M > 0$ and such that $0 < a_n < b_n$ for $n \geq M$, we can then make the following conclusions:
+  \begin{enumerate}
+    \item If $\sum_{n=0}^\infty b_n$ \textbf{converges}, then $\sum_{n=0}^\infty a_n$ \textbf{converges}.
+    \item If $\sum_{n=0}^\infty a_n$ \textbf{diverges}, then $\sum_{n=0}^\infty a_n$ \textbf{diverges}.
+  \end{enumerate}
   \subsection{Limit Comparison Test}
+  Let $a_n$ and $b_n$ be positive sequences, assuming the following limit exists:
+  \[
+    L = \lim_{n\rightarrow \infty} \displaystyle\frac{a_n }{b_n}
+  \]
+  Then we can make the following conclusions:
+  \begin{enumerate}
+    \item If $L > 0$, then $\sum_{n=0}^\infty a_n$ \textbf{converges} if and only if $\sum_{n=0}^\infty b_n$ \textbf{converges}.
+    \item If $L = \infty$ and $\sum_{n=0}^\infty a_n$ \textbf{converges}, then $\sum_{n=0}^\infty b_n$ \textbf{converges}.
+    \item If $L = 0$ and $\sum_{n=0}^\infty b_n$ \textbf{converges}, then $\sum_{n=0}^\infty a_n$ \textbf{converges}.
+  \end{enumerate}
   \subsection{Alternating Series Test}
+  Take a sequence $b_n$ which is positive, strictly decreasing and converges to 0:
+  \[
+    \lim_{n\rightarrow \infty} b_n = 0
+  \]
+  Then the following alternating series also \textbf{converges}:
+  \[
+    \sum_{n=1}^\infty (-1)^{n-1} b_n = S
+  \]
+  We can also derive the following:
+  \[
+    0 < S < b_1 \\ \textrm{ and } S_p < S < S_q \textrm{ for $p$ is even and $q$ is odd.}  
+  \]
   \subsection{Ratio Test}
+  For a sequence $a_n$, assume the following limit exists:
+  \[
+    p = \lim_{n\rightarrow \infty} |\displaystyle\frac{a_{n+1}}{a_n}|
+  \]
+  We can make the following conclusions:
+  \begin{enumerate}
+    \item If $p<1$, then $\sum a_n$ \textbf{converges absolutely}.
+    \item If $p>1$, then $\sum a_n$ \textbf{diverges}.
+    \item If $p=1$, then the test is \textbf{inconclusive}.
+  \end{enumerate}
   \subsection{Root Test}
+  For a sequence $a_n$, assume the following limit exists:
+  \[
+    L = \lim_{n\rightarrow \infty} \sqrt[n]{|a_n|}
+  \]
+  \begin{enumerate}
+    \item If $p<1$, then $\sum a_n$ \textbf{converges absolutely}.
+    \item If $p>1$, then $\sum a_n$ \textbf{diverges}.
+    \item If $p=1$, then the test is \textbf{inconclusive}.
+  \end{enumerate}
+  We can make the following conclusions:
   \section{Power Series} 
-  \subsection{Derivative of Power Series}
-  \subsection{Integral of Power Series}
+  We begin by creating a series of polynomials:
+  \[
+    \sum_{n=0}^\infty a_n x^n = a^0 + a_1 x^1 + \dots + a_n x^n
+  \]
+  Specifically, a \textbf{power series} with a center $c$, is defined as:
+  \[
+    \sum_{n=0}^\infty a_n (x-c)^n = a^0 + a_1 (x-c)^1 + \dots + a_n (x-c)^n = F(x)
+  \]
+  If for $F(x)$ exists a radius of convergence $R$, for which $|x-c| <R$, then $F(x)$ will converge for all values of $x$, and $F(x)$ will diverge for all values of $x$ when $|x-c| >R$. This means that $F(x)$ will converge for all x in the interval $(c-R, c+R)$, but it the state of the endpoints must be manually evaluated. Note that this value $R$ could be $R=\infty$, meaning $F(x)$ converges for all $x$.
+  \subsection{Derivative and Antiderivative of a Power Series}
+  For a power series:
+  \[
+    F(x) = \sum_{n=0}^\infty a_n (x-c)^n
+  \]
+  which has a radius of convergence $R>0$, then $F$ is differentiable on $(c-R, c+R)$, and we can integrate/differentiate term by term for $x \in (c-R,c+R)$:
+  \begin{itemize}
+    \item $F^\prime (x) = \sum_{n=0}^\infty n a_n(x-c)^{n-1}$
+    \item $\int F (x) = A + \sum_{n=0}^\infty a_n \displaystyle\frac{1}{n+1}(x-c)^{n+1}$, where $A$ is a an arbitrary constant.
+  \end{itemize}
+  In either case, the radius of convergence $R$, remains the same.
   \subsection{Manipulation of Power Series}
   \section{Taylor Series} 
   \subsection{Taylor Series Expansion of Functions}
