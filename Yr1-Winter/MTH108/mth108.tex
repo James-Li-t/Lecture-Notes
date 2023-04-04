@@ -938,6 +938,71 @@
     \item Write the answer in the form $ax+by+cz = d$.
   \end{enumerate}
   \subsection{Linear Independence}
+  If $S = \{\vec{a}_1 , \dots \vec{a}_n\}$:
+  \begin{itemize}
+    \item Is Linearly \textbf{Independent} and $S_1 \subseteq S$, then $S_1$ is Linearly Independent.
+    \item Is Linearly \textbf{Dependent}, then $\{\vec{a}_1, \dots, \vec{a}_n, \vec{b}_1, \dots \vec{b}_n\}$ is Linearly Dependent.
+  \end{itemize}
   \section{Eigenvalues and Diagonalizability}
-  \subsection{Eigenvalues and Eigenvectors}
+  \subsection{Eigenvalues, Eigenvectors and Eigenspace}
+  Given some $\underset{(n\times n)}{A} \vec{x} = \lambda \vec{x}, \ \vec{x} \neq \vec{0}, \ \lambda \in \R$, we define the following:
+  \begin{itemize}
+    \item $\lambda$ is called the \textbf{eigenvalue} of $A$
+    \item $\vec{x}$ is called the \textbf{eigenvector} of $A$, corresponding to $\lambda$ and $\neq 0$
+    \item $\vec{0}$ is \textbf{not} an eigenvector.
+    \item The eigenvalues of $A^k$ are $\lambda^k$, $A^k \vec{x} = \lambda^k \vec{x}$
+  \end{itemize}
+  We then define the following $E_{\lambda_i}$ as the \textbf{eigenspace}:
+  \[
+    E_{\lambda_i} = \{\vec{x}: (\lambda_i I - A), \vec{x} = 0\}
+  \]
+  The dimension of the eigenspace is equal to the nullities of $(\lambda_i I -A)$:
+  \[
+    dim(E_{\lambda_i}) = null(\lambda I -A)
+  \]
+  To find the \textbf{eigenvalues} of some matrix $A$, solve the determinant of:
+  \[
+    |\lambda_i I - A|
+  \]
+  To find the \textbf{eigenspace} of some eigenvalues, substitute the value of $\lambda_i$ into the system:
+  \[
+    \lambda_i I - A = B
+  \]
+  Then use to solve the following homogenous system:
+  \[
+    B \vec{x} = \vec{0} \textrm{ (This is also the span of $\vec{x}$)}
+  \]
+  We also say that $A$ is \textbf{diagonalizable} if:
+  \[
+    dim(E_{\lambda_i}) = n
+  \]
+  Given some $A$, let $\lambda_1, \dots, \lambda_n$ be all eigenvalues of $A$, then:
+  \begin{itemize}
+    \item $\sum_{i=1}^n \lambda_i$ is equal to the trace of $A$ ($tr(A)$).
+    \item $\prod_{i=1}^n \lambda{i}$ is equal to the determinant of $A$ ($|A|$).
+  \end{itemize}
+  \subsection{Invertibility and Eigenvalues}
+  Given some $\underset{(n\times n)}{A} \vec{x} = \lambda \vec{x}, \ \vec{x} \neq \vec{0}, \ \lambda \in \R$, we define the following:
+  \begin{itemize}
+    \item $|\lambda I -A| = 0 \Leftrightarrow \lambda$ \textbf{is} an eigenvalue of $A$
+    \item $|\lambda I -A| = 0 \Leftrightarrow \lambda I -A$ is \textbf{not} invertible.
+    \item $|\lambda I -A| = 0 \Leftrightarrow r(\lambda I - A) < n$ 
+  \end{itemize}
+  Given that $A$ is invertible; $\lambda_1, \dots \lambda_n$ are eigenvalues of $A$ and $\lambda_i \neq 0$, then:
+  \[
+    A^{-1}\vec{x} = \frac{1 }{\lambda} \vec{x}, \ \vec{x} \neq \vec{0}
+  \]
+  Given some $\underset{(n\times n)}{A} \vec{x} = \lambda \vec{x}, \ \vec{x} \neq \vec{0}, \ \lambda \in \R$, the following properties apply:
+  \begin{enumerate}
+    \item If $A$ \textbf{is} invertible $\Rightarrow$ eigenvalues of $A$ are \textbf{non-zero}.
+    \item If an eigenvalue of $A = 0 \Rightarrow$ A is \textbf{not} invertible.
+  \end{enumerate}
+
+
+
+
+
+
+
+
 \end{document}
