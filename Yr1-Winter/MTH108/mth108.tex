@@ -118,7 +118,7 @@
     \end{split}
   \end{equation}
   Therefore $C = (-1,1)$.
-  \subsection{Norm and Angle}
+  \subsection{Norm and Angle}\label{norm}
   The magnitude of a vector in $\R^n$ is called the \textbf{Norm}, it is notated and defined as:
   \[
     ||\vec{a}|| = \sqrt{x_1^2 + x_2^2 + \dots + x_n^2} \quad (\vec{a}\textrm{ is some vector in }\R^n)
@@ -962,7 +962,7 @@
   \]
   To find the \textbf{eigenvalues} of some matrix $A$, solve the determinant of:
   \[
-    |\lambda_i I - A|
+    |\lambda_i I - A| = 0
   \]
   To find the \textbf{eigenspace} of some eigenvalues, substitute the value of $\lambda_i$ into the system:
   \[
@@ -998,11 +998,57 @@
     \item If an eigenvalue of $A = 0 \Rightarrow$ A is \textbf{not} invertible.
   \end{enumerate}
 
+  \section{Complex Numbers}
+  A complex number $z \in \mathbb{C}$ is defined as $z = x + iy$, where $i \in \mathbb{I}$ is the imaginary number $\sqrt{-1}$. $z$ is comprised of two parts, real and imaginary respectively. We can denote the real and imaginary parts of $z$ as $Re(z) = x$ and $Im(z) = y$. Complex numbers follow normal rules of arithmetic, meaning for example:
+  \begin{itemize}
+    \item $z_1 + z_2 = (a+b) + i(c+d)$, for some arbitrary complex numbers $z_1,z_2$.
+    \item $i^2 = \sqrt{-1}^2 = i^{(\frac{1 }{2}) (2)} = -1$.
+    \item $z_1z_2 = (a+ib)(c+id) = ac + iad + icb + (-1(bd))$, for some arbitrary complex numbers $z_1,z_2$.
+  \end{itemize}
+  The \textbf{Complex Conjugate}, or simply the \textbf{Conjugate} of a complex number $z = a + ib$, is denoted as:
+  \[
+    \bar{z} = a-ib
+  \]
+  The \textbf{Modulus} of a complex number $z = a + ib$ is denoted as:
+  \[
+    |z| = \sqrt{a^2 + b^2}, \ |z| \in \R
+  \]
+  This is similar to the norm of a vector (\textit{see }\ref{norm}), and can be thought of as the distance of a complex number relative to the complex plane.
+  \subsection{Polar and Exponential Forms}
+  Taking a complex number $z= a - ib$ as some point $(a,b)$ in the complex plane, we can represent this instead in the form $(r,\theta)$, where $r$ is the distance from the origin and $\theta$ is the angle starting from the positive $x$-axis. This is called the \textbf{Polar Form} of a complex number. To represent this using the form $z=a+ib$ we make the following substitution according the our polar coordinate definition:
+  \[
+    a = r \cos\theta, \ b = r \sin \theta
+  \]
+  We can then rewrite the number $z$, as:
+  \[
+    z = r(\cos\theta - i\sin\theta)
+  \]
+  Using basic trigonometry we can observe that $r = \sqrt{a^2 + b^2}$, and thus:
+  \[
+    z = |z|(\cos\theta - i\sin\theta)
+  \]
+  We call $\theta$ the \textbf{argument} of $z$, and can be solved for all possible values using:
+  \[
+    arg(z) = \theta
+  \]
+  \[
+    \tan\theta = \frac{b }{a}
+  \]
+  If we restrict the value of the argument of $z$, such that $-\pi \leq \theta \leq \pi$, this is then called the \textbf{Principal Argument} of $z$ and denoted as:
+  \[
+    Arg(z) = \tan^{-1} \theta, \ -\pi \leq \theta \leq \pi
+  \]
+  Note that when solving for all possive values of $\theta$ that satisfy the argument of $z$, the increment between the values will be $2\pi k, k\in \mathbb{Z}$ as there are infinite values of $\theta$ which will be applicable. This can be denoted as:
+  \[
+    arg(z) = Arg(z) + 2 \pi k, \ k \in \mathbb{Z}
+  \]
 
-
-
-
-
-
+  Using the definition for polar form, we can extrapolate using Eulers formula to create the \textbf{Exponential Form} of $z$, denoted as:
+  \[
+    e^{i\theta} = \cos\theta + i \sin\theta
+  \]
+  \[
+    z = re^{i\theta + 2\pi k}, k \in \mathbb{Z}
+  \]
 
 \end{document}
